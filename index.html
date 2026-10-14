@@ -5660,60 +5660,60 @@ ${itemsSummary}
                             <div class="flex items-center justify-between text-[11px]">
                                 <span class="font-extrabold text-sky-950">📍 Ubicación Exacta de ${ord.clientName}</span>
                                 <button type="button" onclick="window.app.toggleInlineOrderMiniMap('${ord.id}', ${ord.lat}, ${ord.lng})" class="text-rose-600 font-bold">Cerrar Mapa ✕</button>
-            // Verificación automática de equipos vencidos en la calle (Más de 2 días sin retirar)
-            checkAndAlertOverdueStreetItems();
-        }
+                            </div>
+                            <div id="inlineMiniMapCanvas-${ord.id}" class="w-full h-44 rounded-lg border border-sky-300"></div>
+                        </div>
 
-        // NUEVA FUNCIÓN: Detector Automático de Equipos Olvidados en la Calle (> 2 días) con Mini-Mapa y Botón Telegram
-        function checkAndAlertOverdueStreetItems() {
-            const nowTime = new Date().getTime();
-            const TWO_DAYS_MS = 2 * 24 * 60 * 60 * 1000;
-            const overdueOrders = [];
+                        <!-- Resumen de Equipos Dejados vs Retirados en esta Casa -->
+                        <div class="space-y-1.5">
+                            ${(ord.items || []).map((it, idx) => {
+                                const del = Number(it.delivered) || 0;
+                                const ret = Number(it.returned) || 0;
+                                const miss = Math.max(0, del - ret);
+                                return `
+                                    <div class="flex flex-wrap items-center justify-between gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200 text-xs">
+                                        <div>
+                                            <strong class="text-slate-900">${it.requested}x ${it.name}</strong>
+                                            <span class="text-[11px] text-slate-500 ml-1">($${Number(it.price).toFixed(2)} c/u)</span>
+                                            ${miss > 0 ? `<span class="ml-1 px-2 py-0.5 rounded bg-rose-100 text-rose-800 font-black text-[10px]">Faltan ${miss} en calle</span>` : ''}
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <label class="text-[11px] font-bold text-slate-600">Dejé:
+                                                <input type="number" min="0" value="${del}" onchange="window.app.updateOrderItemCounts('${ord.id}', ${idx}, 'delivered', this.value)" class="w-12 text-center font-black bg-white border border-slate-300 rounded py-0.5">
+                                            </label>
+                                            <label class="text-[11px] font-bold text-emerald-700">Retiré:
+                                                <input type="number" min="0" max="${del}" value="${ret}" onchange="window.app.updateOrderItemCounts('${ord.id}', ${idx}, 'returned', this.value)" class="w-12 text-center font-black bg-white border border-slate-300 rounded py-0.5">
+                                            </label>
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
 
-            state.orders.forEach(ord => {
-                const eventDateMs = new Date(ord.eventDate || TODAY_STR).getTime();
-                const diffMs = nowTime - eventDateMs;
-                const inStreet = (ord.items || []).reduce((acc, it) => acc + Math.max(0, (Number(it.delivered) || 0) - (Number(it.returned) || 0)), 0);
-
-                // Si pasaron más de 2 días del evento y todavía tiene equipos en la calle
-                if (diffMs > TWO_DAYS_MS && inStreet > 0) {
-                    overdueOrders.push({ ...ord, inStreetUnits: inStreet });
-                }
-            });
-
-            // Si hay un contenedor visual de alertas de calle vencidas, podemos renderizarlo o enviar recordatorio por Telegram
-            if (overdueOrders.length > 0) {
-                // Verificar si ya se alertó hoy para no saturar al bot de Telegram cada segundo
-                const lastAlertKey = 'fiestacontrol_last_overdue_alert';
-                const lastAlertDate = localStorage.getItem(lastAlertKey);
-                if (lastAlertDate !== TODAY_STR) {
-                    localStorage.setItem(lastAlertKey, TODAY_STR);
-                    sendOverdueStreetItemsTelegramAlert(overdueOrders);
-                }
-            }
-        }
-
-        async function sendOverdueStreetItemsTelegramAlert(overdueOrders) {
-            const token = (state.settings.telegramBotToken || '').trim();
-            const chatId = (state.settings.telegramChatId || '').trim();
-            if (!token || !chatId) return;
-
-            let reportText = `🚨 *¡ALERTA DE EQUIPOS OLVIDADOS EN CALLE (+2 DÍAS)!* 🚨\nHay mobiliario que no se ha recogido a tiempo:\n\n`;
-            overdueOrders.forEach((ord, i) => {
-                const mapsLink = `https://www.google.com/maps?q=${ord.lat},${ord.lng}`;
-                const itemsStr = (ord.items || []).filter(it => Number(it.delivered) - Number(it.returned) > 0).map(it => `${Math.max(0, Number(it.delivered) - Number(it.returned))}x ${it.name}`).join(', ');
-                reportText += `${i + 1}. *${ord.clientName}* (${ord.phone})\n📅 Fecha Evento: ${ord.eventDate}\n📦 En calle: ${itemsStr}\n📍 Dirección: ${ord.address}\n🗺️ GPS Directo: ${mapsLink}\n\n`;
-            });
-
-            try {
-                await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ chat_id: chatId, text: reportText, parse_mode: 'Markdown' })
-                });
-            } catch (e) {
-                console.warn('Error enviando alerta de equipos olvidados a Telegram:', e);
-            }
+                        <!-- Pie Financiero Rápido + MEJORA 2: Botón Mandar Recibo y Constancia de Entrega al WhatsApp del Cliente -->
+                        <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-100 text-xs">
+                            <div>
+                                <span class="text-slate-500">Total: <strong class="text-slate-900">$${tot.toFixed(2)}</strong></span>
+                                <span class="mx-1 text-slate-300">|</span>
+                                <span class="text-emerald-700">Abonó: <strong>$${paid.toFixed(2)}</strong></span>
+                                <span class="mx-1 text-slate-300">|</span>
+                                <span class="${debt > 0 ? 'text-rose-600 font-black' : 'text-emerald-600 font-bold'}">Debe: $${debt.toFixed(2)}</span>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-1.5">
+                                <button type="button" onclick="window.app.markAllReturned('${ord.id}')" class="px-2.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold text-[11px]">
+                                    ✅ Retirar Todo
+                                </button>
+                                <button type="button" onclick="window.app.openReceiptModal('${ord.id}')" class="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-[11px]">
+                                    <i class="fa-solid fa-signature mr-1"></i>Firma / PDF
+                                </button>
+                                <button type="button" onclick="window.app.sendDeliveryReceiptWhatsApp('${ord.id}')" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-[11px] flex items-center gap-1 shadow-2xs">
+                                    <i class="fa-brands fa-whatsapp"></i> Mandar Recibo Entrega
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
 
         // --- EXPOSE PUBLIC CONTROLLER METHODS TO WINDOW ---
