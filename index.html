@@ -135,33 +135,33 @@
         </div>
 
         <!-- Nivel 3: Barra de Opciones Siempre Visible en Pantalla (Ajustable sin salirse) -->
-        <div class="bg-slate-50/90 border-t border-slate-200/80 px-2 sm:px-6 py-1.5">
-            <nav class="max-w-7xl mx-auto flex flex-wrap items-center justify-center sm:justify-start gap-1 sm:gap-1.5">
-                <button onclick="window.app.selectNavCategory('TODOS')" data-navcat="TODOS" class="nav-cat-link px-2.5 sm:px-3.5 py-1.5 rounded-xl text-[11px] sm:text-xs font-bold bg-brand-600 text-white shadow-2xs transition flex items-center gap-1.5">
+        <div class="bg-slate-50/90 border-t border-slate-200/80 px-2 sm:px-6 py-1">
+            <nav class="max-w-7xl mx-auto flex flex-wrap items-center justify-center sm:justify-start gap-1">
+                <button onclick="window.app.selectNavCategory('TODOS')" data-navcat="TODOS" class="nav-cat-link px-2 py-1 rounded-lg text-[10px] sm:text-xs font-bold bg-brand-600 text-white shadow-2xs transition flex items-center gap-1">
                     <i class="fa-solid fa-layer-group"></i> <span>Todo</span>
                 </button>
-                <button onclick="window.app.selectNavCategory('Trampolines')" data-navcat="Trampolines" class="nav-cat-link px-2.5 sm:px-3.5 py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold bg-white text-slate-700 hover:bg-brand-50 border border-slate-200/80 transition flex items-center gap-1.5">
+                <button onclick="window.app.selectNavCategory('Trampolines')" data-navcat="Trampolines" class="nav-cat-link px-2 py-1 rounded-lg text-[10px] sm:text-xs font-semibold bg-white text-slate-700 hover:bg-brand-50 border border-slate-200/80 transition flex items-center gap-1">
                     <i class="fa-solid fa-child-reaching text-pink-500"></i> <span>Inflables</span>
                 </button>
-                <button onclick="window.app.selectNavCategory('Sillas y Mesas')" data-navcat="Sillas y Mesas" class="nav-cat-link px-2.5 sm:px-3.5 py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold bg-white text-slate-700 hover:bg-brand-50 border border-slate-200/80 transition flex items-center gap-1.5">
+                <button onclick="window.app.selectNavCategory('Sillas y Mesas')" data-navcat="Sillas y Mesas" class="nav-cat-link px-2 py-1 rounded-lg text-[10px] sm:text-xs font-semibold bg-white text-slate-700 hover:bg-brand-50 border border-slate-200/80 transition flex items-center gap-1">
                     <i class="fa-solid fa-chair text-amber-600"></i> <span>Sillas y Mesas</span>
                 </button>
-                <button onclick="window.app.selectNavCategory('Sonido y Luces')" data-navcat="Sonido y Luces" class="nav-cat-link px-2.5 sm:px-3.5 py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold bg-white text-slate-700 hover:bg-brand-50 border border-slate-200/80 transition flex items-center gap-1.5">
+                <button onclick="window.app.selectNavCategory('Sonido y Luces')" data-navcat="Sonido y Luces" class="nav-cat-link px-2 py-1 rounded-lg text-[10px] sm:text-xs font-semibold bg-white text-slate-700 hover:bg-brand-50 border border-slate-200/80 transition flex items-center gap-1">
                     <i class="fa-solid fa-volume-high text-indigo-500"></i> <span>Sonido</span>
                 </button>
-                <button onclick="window.app.selectNavCategory('Carpas y Extras')" data-navcat="Carpas y Extras" class="nav-cat-link px-2.5 sm:px-3.5 py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold bg-white text-slate-700 hover:bg-brand-50 border border-slate-200/80 transition flex items-center gap-1.5">
+                <button onclick="window.app.selectNavCategory('Carpas y Extras')" data-navcat="Carpas y Extras" class="nav-cat-link px-2 py-1 rounded-lg text-[10px] sm:text-xs font-semibold bg-white text-slate-700 hover:bg-brand-50 border border-slate-200/80 transition flex items-center gap-1">
                     <i class="fa-solid fa-campground text-emerald-600"></i> <span>Carpas</span>
                 </button>
-                <button onclick="document.getElementById('combosSection')?.scrollIntoView({behavior:'smooth'})" class="px-2.5 sm:px-3.5 py-1.5 rounded-xl text-[11px] sm:text-xs font-bold bg-amber-50 text-amber-800 hover:bg-amber-100 border border-amber-300 transition flex items-center gap-1.5">
+                <button onclick="document.getElementById('combosSection')?.scrollIntoView({behavior:'smooth'})" class="px-2 py-1 rounded-lg text-[10px] sm:text-xs font-bold bg-amber-50 text-amber-800 hover:bg-amber-100 border border-amber-300 transition flex items-center gap-1">
                     <i class="fa-solid fa-gift text-amber-600"></i> <span>Combos Ahorro</span>
                 </button>
-                <button onclick="document.getElementById('guestCalculatorSection')?.scrollIntoView({behavior:'smooth'})" class="px-2.5 sm:px-3.5 py-1.5 rounded-xl text-[11px] sm:text-xs font-bold bg-indigo-50 text-indigo-800 hover:bg-indigo-100 border border-indigo-200 transition flex items-center gap-1.5">
+                <button onclick="document.getElementById('guestCalculatorSection')?.scrollIntoView({behavior:'smooth'})" class="px-2 py-1 rounded-lg text-[10px] sm:text-xs font-bold bg-indigo-50 text-indigo-800 hover:bg-indigo-100 border border-indigo-200 transition flex items-center gap-1">
                     <i class="fa-solid fa-calculator text-indigo-600"></i> <span>Calculadora Invitados</span>
                 </button>
-                <button onclick="window.app.openClientOrderLookupModal()" class="px-2.5 sm:px-3.5 py-1.5 rounded-xl text-[11px] sm:text-xs font-bold bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 transition flex items-center gap-1.5 sm:ml-auto">
+                <button onclick="window.app.openClientOrderLookupModal()" class="px-2 py-1 rounded-lg text-[10px] sm:text-xs font-bold bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 transition flex items-center gap-1 sm:ml-auto">
                     <i class="fa-solid fa-receipt text-emerald-600"></i> <span>🔎 Consultar mi Pedido</span>
                 </button>
-                <button onclick="document.getElementById('howItWorksSection')?.scrollIntoView({behavior:'smooth'})" class="px-2.5 sm:px-3.5 py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold bg-white text-slate-700 hover:bg-brand-50 border border-slate-200/80 transition flex items-center gap-1.5">
+                <button onclick="document.getElementById('howItWorksSection')?.scrollIntoView({behavior:'smooth'})" class="px-2 py-1 rounded-lg text-[10px] sm:text-xs font-semibold bg-white text-slate-700 hover:bg-brand-50 border border-slate-200/80 transition flex items-center gap-1">
                     <i class="fa-solid fa-circle-question text-brand-500"></i> <span>¿Cómo Reservar?</span>
                 </button>
             </nav>
@@ -179,9 +179,12 @@
                 <div class="min-w-0">
                     <div class="flex flex-wrap items-center gap-1.5">
                         <span class="font-black text-sm sm:text-base tracking-tight text-white">FiestaControl <span class="text-rose-400">ERP</span></span>
-                        <span id="cloudStatusBadge" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                        <span id="cloudStatusBadge" onclick="window.app.switchAdminTab('settings')" class="cursor-pointer inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30" title="Toca para ir a las credenciales de Firebase">
                             <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span> Conectando...
                         </span>
+                        <button type="button" onclick="window.app.switchAdminTab('settings'); window.app.verifyFirebaseConnectionNow();" class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-400 transition flex items-center gap-1 shadow-2xs" title="Probar conexión a Firebase ahora">
+                            <i class="fa-solid fa-plug-circle-check"></i> Check Firebase
+                        </button>
                         <span id="navStreetAlertBadge" class="hidden bg-rose-600 text-white text-[10px] px-2 py-0.5 rounded-full font-extrabold">0 en calle</span>
                     </div>
                     <p class="text-[10px] text-slate-400 truncate hidden sm:block">Control de Inventario en Calle, Cobros Parciales y Rutas GPS</p>
@@ -293,7 +296,7 @@
     </script>
 
     <!-- ==================== VIEW 1: CLIENT CATALOG & QUOTER ==================== -->
-    <main id="viewClient" class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-5">
+    <main id="viewClient" class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-2.5 space-y-3.5">
         <!-- Aviso / Comunicado Opcional de la Administración (Configurable en Ajustes) -->
         <div id="clientAdminNoticeBanner" class="hidden bg-amber-50 border-2 border-amber-300 rounded-2xl p-3.5 sm:px-5 shadow-xs flex items-start sm:items-center justify-between gap-3">
             <div class="flex items-start sm:items-center gap-3">
@@ -310,27 +313,27 @@
             </button>
         </div>
 
-        <!-- Hero Banner Editable desde el Panel de Administración -->
-        <div class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-brand-900 via-brand-700 to-indigo-800 text-white p-5 sm:p-7 shadow-xl">
-            <div class="relative z-10 max-w-2xl space-y-2.5">
-                <h1 id="heroBannerTitle" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
+        <!-- Hero Banner Editable desde el Panel de Administración (Compacto y Angosto en Móvil) -->
+        <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-r from-brand-900 via-brand-700 to-indigo-800 text-white p-3.5 sm:p-6 shadow-lg">
+            <div class="relative z-10 max-w-2xl space-y-1.5 sm:space-y-2">
+                <h1 id="heroBannerTitle" class="text-lg sm:text-2xl lg:text-3xl font-extrabold tracking-tight leading-snug">
                     Todo el mobiliario y diversión para tu fiesta en un solo lugar
                 </h1>
-                <p id="heroBannerDesc" class="text-brand-100 text-xs sm:text-sm leading-relaxed">
+                <p id="heroBannerDesc" class="text-brand-100 text-[11px] sm:text-sm leading-snug">
                     Selecciona trampolines, sillas, mesas, carpas y sonido profesional. Arma tu cotización en segundos y envíala directo a nuestro WhatsApp.
                 </p>
-                <div class="pt-1 flex flex-wrap gap-2.5">
-                    <button onclick="document.getElementById('catalogSection').scrollIntoView({behavior:'smooth'})" class="bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-4 py-2.5 rounded-xl text-xs sm:text-sm shadow-lg transition flex items-center gap-2">
+                <div class="pt-1 flex flex-wrap items-center gap-2">
+                    <button onclick="document.getElementById('catalogSection').scrollIntoView({behavior:'smooth'})" class="bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-3.5 py-2 rounded-xl text-[11px] sm:text-xs shadow-md transition flex items-center gap-1.5">
                         <i class="fa-solid fa-angles-down animate-bounce"></i>
                         <span id="heroCatalogBtnText">Ver Catálogo y Precios Abajo</span>
                     </button>
-                    <button onclick="window.app.toggleQuoteDrawer(true)" class="bg-brand-600/40 hover:bg-brand-600/60 border border-white/30 text-white font-semibold px-4 py-2.5 rounded-xl text-xs sm:text-sm backdrop-blur-xs transition flex items-center gap-2">
+                    <button onclick="window.app.toggleQuoteDrawer(true)" class="bg-brand-600/40 hover:bg-brand-600/60 border border-white/30 text-white font-semibold px-3.5 py-2 rounded-xl text-[11px] sm:text-xs backdrop-blur-xs transition flex items-center gap-1.5">
                         <i class="fa-brands fa-whatsapp text-emerald-300"></i> Enviar Cotización
                     </button>
                 </div>
             </div>
             <!-- Decorative background icons -->
-            <i class="fa-solid fa-champagne-glasses absolute -right-6 -bottom-8 text-white/10 text-8xl sm:text-9xl pointer-events-none"></i>
+            <i class="fa-solid fa-champagne-glasses absolute -right-4 -bottom-6 text-white/10 text-7xl sm:text-8xl pointer-events-none"></i>
         </div>
 
         <!-- Barra Visual Animada que guía la vista del cliente hacia el Catálogo de Abajo -->
@@ -392,7 +395,70 @@
         <!-- Ancla superior para cuando el Admin activa la Opción 1 (Poner el Catálogo de Primero) -->
         <div id="catalogTopSlotAnchor"></div>
 
-        <!-- NUEVA FUNCIÓN 5: CALCULADORA INTELIGENTE DE MOBILIARIO POR NÚMERO DE INVITADOS (CON OPCIÓN 2 DESPLEGABLE) -->
+        <!-- Ancla opcional por si desde el Admin decides volver a subir el Asistente Inteligente arriba -->
+        <div id="guestCalculatorTopAnchor"></div>
+
+        <!-- Sección de Promociones Activas -->
+        <section id="activePromosSection" class="space-y-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase bg-amber-400 text-slate-950">🔥 Ofertas de Temporada</span>
+                    <h2 class="text-sm sm:text-base font-extrabold text-slate-900">Promociones Destacadas</h2>
+                </div>
+            </div>
+            <div id="activePromosGrid" class="grid grid-cols-1 md:grid-cols-2 gap-3.5"></div>
+        </section>
+
+        <!-- Sección de Combos Fiesta Ahorro -->
+        <section id="combosSection" class="space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase bg-amber-100 text-amber-900 border border-amber-300">🎁 Paquetes Listos</span>
+                        <h2 class="text-base sm:text-lg font-extrabold text-slate-900">Combos Fiesta Ahorro (1 Clic)</h2>
+                    </div>
+                    <p class="text-xs text-slate-500">Lleva el paquete completo para tu evento con descuento incluido.</p>
+                </div>
+            </div>
+            <div id="clientCombosGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </section>
+
+        <!-- Ancla por defecto del Catálogo -->
+        <div id="catalogDefaultSlotAnchor"></div>
+
+        <!-- Sección Principal del Catálogo de Equipos -->
+        <section id="catalogSection" class="space-y-4 pt-1">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white p-4 rounded-2xl border border-slate-200 shadow-2xs">
+                <div>
+                    <div class="flex flex-wrap items-center gap-2">
+                        <h2 class="text-lg sm:text-xl font-black text-slate-900">Catálogo de Equipos y Mobiliario</h2>
+                        <span id="catalogSelectedDatePill" class="hidden px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300"></span>
+                    </div>
+                    <p class="text-xs text-slate-500">Cada tarjeta indica el espacio mínimo requerido (📐) y si requiere corriente 110V (🔌).</p>
+                </div>
+                <div class="relative w-full md:w-64">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                    <input id="clientSearchInput" type="text" oninput="window.app.renderCatalog()" placeholder="Buscar sillas, inflable, carpa..." class="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500">
+                </div>
+            </div>
+
+            <!-- Filtros por Categoría -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-1">
+                <button onclick="window.app.setCategoryFilter('TODOS')" data-cat="TODOS" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold bg-brand-600 text-white shadow-sm shrink-0 transition">Todos los Equipos</button>
+                <button onclick="window.app.setCategoryFilter('Trampolines')" data-cat="Trampolines" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 shrink-0 transition">Trampolines e Inflables</button>
+                <button onclick="window.app.setCategoryFilter('Sillas y Mesas')" data-cat="Sillas y Mesas" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 shrink-0 transition">Sillas y Mesas</button>
+                <button onclick="window.app.setCategoryFilter('Sonido y Luces')" data-cat="Sonido y Luces" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 shrink-0 transition">Sonido y Luces</button>
+                <button onclick="window.app.setCategoryFilter('Carpas y Extras')" data-cat="Carpas y Extras" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 shrink-0 transition">Carpas y Toldas</button>
+            </div>
+
+            <!-- Grid del Catálogo -->
+            <div id="clientCatalogGrid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-5"></div>
+        </section>
+
+        <!-- Ancla al final de la pantalla principal para el Asistente Inteligente (Posición por Defecto) -->
+        <div id="guestCalculatorBottomAnchor"></div>
+
+        <!-- ASISTENTE INTELIGENTE DE MOBILIARIO POR NÚMERO DE INVITADOS (AHORA UBICADO AL FINAL DE LA PANTALLA PRINCIPAL Y 100% CONFIGURABLE EN ADMIN) -->
         <section id="guestCalculatorSection" class="bg-gradient-to-r from-indigo-50 via-brand-50 to-amber-50/70 rounded-2xl p-4 sm:p-5 border-2 border-indigo-200 shadow-xs space-y-3.5">
             <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                 <div class="flex items-start sm:items-center gap-3.5 cursor-pointer" onclick="window.app.toggleGuestCalculatorCollapse()">
@@ -401,10 +467,10 @@
                     </div>
                     <div>
                         <div class="flex flex-wrap items-center gap-2">
-                            <span class="px-2 py-0.5 rounded-md text-[10px] font-black uppercase bg-indigo-600 text-white">🧮 Asistente Inteligente</span>
-                            <h3 class="font-extrabold text-sm sm:text-base text-slate-900">¿No sabes cuántas sillas, mesas, manteles o toldas necesitas?</h3>
+                            <span id="calcAssistantBadgeText" class="px-2 py-0.5 rounded-md text-[10px] font-black uppercase bg-indigo-600 text-white">🧮 Asistente Inteligente</span>
+                            <h3 id="calcAssistantTitleText" class="font-extrabold text-sm sm:text-base text-slate-900">¿No sabes cuántas sillas, mesas, manteles o toldas necesitas?</h3>
                         </div>
-                        <p class="text-xs text-slate-600 mt-0.5">Calcula tu paquete exacto según tus invitados (mesas de 4, 6 u 8 puestos, sillas, manteles y toldas).</p>
+                        <p id="calcAssistantSubtitleText" class="text-xs text-slate-600 mt-0.5">Calcula tu paquete exacto según tus invitados (mesas de 4, 6 u 8 puestos, sillas, manteles y toldas).</p>
                     </div>
                 </div>
                 <div class="flex flex-wrap items-center gap-2 shrink-0">
@@ -487,63 +553,6 @@
                     </button>
                 </div>
             </div>
-        </section>
-
-        <!-- Sección de Promociones Activas -->
-        <section id="activePromosSection" class="space-y-3">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase bg-amber-400 text-slate-950">🔥 Ofertas de Temporada</span>
-                    <h2 class="text-sm sm:text-base font-extrabold text-slate-900">Promociones Destacadas</h2>
-                </div>
-            </div>
-            <div id="activePromosGrid" class="grid grid-cols-1 md:grid-cols-2 gap-3.5"></div>
-        </section>
-
-        <!-- Sección de Combos Fiesta Ahorro -->
-        <section id="combosSection" class="space-y-3">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                <div>
-                    <div class="flex items-center gap-2">
-                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase bg-amber-100 text-amber-900 border border-amber-300">🎁 Paquetes Listos</span>
-                        <h2 class="text-base sm:text-lg font-extrabold text-slate-900">Combos Fiesta Ahorro (1 Clic)</h2>
-                    </div>
-                    <p class="text-xs text-slate-500">Lleva el paquete completo para tu evento con descuento incluido.</p>
-                </div>
-            </div>
-            <div id="clientCombosGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-        </section>
-
-        <!-- Ancla por defecto del Catálogo -->
-        <div id="catalogDefaultSlotAnchor"></div>
-
-        <!-- Sección Principal del Catálogo de Equipos -->
-        <section id="catalogSection" class="space-y-4 pt-1">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white p-4 rounded-2xl border border-slate-200 shadow-2xs">
-                <div>
-                    <div class="flex flex-wrap items-center gap-2">
-                        <h2 class="text-lg sm:text-xl font-black text-slate-900">Catálogo de Equipos y Mobiliario</h2>
-                        <span id="catalogSelectedDatePill" class="hidden px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300"></span>
-                    </div>
-                    <p class="text-xs text-slate-500">Cada tarjeta indica el espacio mínimo requerido (📐) y si requiere corriente 110V (🔌).</p>
-                </div>
-                <div class="relative w-full md:w-64">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                    <input id="clientSearchInput" type="text" oninput="window.app.renderCatalog()" placeholder="Buscar sillas, inflable, carpa..." class="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500">
-                </div>
-            </div>
-
-            <!-- Filtros por Categoría -->
-            <div class="flex items-center gap-2 overflow-x-auto pb-1">
-                <button onclick="window.app.setCategoryFilter('TODOS')" data-cat="TODOS" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold bg-brand-600 text-white shadow-sm shrink-0 transition">Todos los Equipos</button>
-                <button onclick="window.app.setCategoryFilter('Trampolines')" data-cat="Trampolines" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 shrink-0 transition">Trampolines e Inflables</button>
-                <button onclick="window.app.setCategoryFilter('Sillas y Mesas')" data-cat="Sillas y Mesas" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 shrink-0 transition">Sillas y Mesas</button>
-                <button onclick="window.app.setCategoryFilter('Sonido y Luces')" data-cat="Sonido y Luces" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 shrink-0 transition">Sonido y Luces</button>
-                <button onclick="window.app.setCategoryFilter('Carpas y Extras')" data-cat="Carpas y Extras" class="cat-pill px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 shrink-0 transition">Carpas y Toldas</button>
-            </div>
-
-            <!-- Grid del Catálogo -->
-            <div id="clientCatalogGrid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-5"></div>
         </section>
 
         <!-- Sección: ¿Cómo Funciona / Cómo Reservar? -->
@@ -1161,6 +1170,11 @@
                             </div>
                         </div>
 
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Accesorios Obligatorios (Hoja de Carga)</label>
+                            <input id="invAccessories" type="text" placeholder="Ej. 1 Motor soplador, 1 Extensión 20m (Separados por coma)" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                        </div>
+
                         <!-- Promotion Toggle for Product / Combo -->
                         <div class="p-3 rounded-xl bg-amber-50 border border-amber-200 space-y-2">
                             <label class="flex items-center gap-2 cursor-pointer">
@@ -1292,32 +1306,7 @@
             </div>
         </section>
 
-        <!-- ADMIN TAB 5: WHATSAPP, YAPPY/BANCO, TELEGRAM BOT, HERO BANNER & WAREHOUSE GPS CONFIG -->
-        <section id="adminTab-settings" class="hidden">
-            <div class="max-w-3xl mx-auto bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-6">
-                <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
-                    <div class="w-11 h-11 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-sliders"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-slate-900">Ajustes de la Página del Cliente, Banner, Promociones y Bots</h3>
-                        <p class="text-xs text-slate-500">Todo lo que modifiques aquí se actualiza inmediatamente en la vista de tus clientes.</p>
-                    </div>
-                </div>
-
-                <!-- Nuevo Bloque: Personalización del Cuadro Principal Azul/Morado (Hero Banner) -->
-                <div class="bg-brand-50/70 border border-brand-200 p-4 rounded-2xl space-y-3">
-                    <div class="flex items-center justify-between">
-                        <label class="block text-xs font-extrabold uppercase tracking-wider text-brand-950">
-                            <i class="fa-solid fa-paintbrush text-brand-600 mr-1"></i> Textos del Cuadro Principal (Banner Azul/Morado del Cliente)
-                        </label>
-                        <span class="text-[10px] font-bold bg-brand-600 text-white px-2 py-0.5 rounded-full">Editable en Vivo</span>
-                        <div id="adminCrmClientsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <!-- Populated dynamically by JS -->
-            </div>
-        </section>
-
-        <!-- ADMIN TAB 5: AJUSTES ORGANIZADOS EN 5 CAJONES DESPLEGABLES (ACORDEONES LIMPIOS) -->
+        <!-- ADMIN TAB 5: AJUSTES ORGANIZADOS EN CAJONES DESPLEGABLES CON FIREBASE ARRIBA DE PRIMERO -->
         <section id="adminTab-settings" class="hidden">
             <div class="max-w-4xl mx-auto space-y-3">
                 <!-- Cabecera de Ajustes con Botón Rápido de Cerrar Ventanas y Guardar -->
@@ -1327,8 +1316,8 @@
                             <i class="fa-solid fa-sliders"></i>
                         </div>
                         <div>
-                            <h3 class="font-extrabold text-base text-slate-900">Configuración del Sistema Organizada por Categorías</h3>
-                            <p class="text-xs text-slate-500">Toca cualquier sección abajo para desplegarla o usa el botón para cerrar todas las ventanas.</p>
+                            <h3 class="font-extrabold text-base text-slate-900">Configuración del Sistema y Conexión Firebase</h3>
+                            <p class="text-xs text-slate-500">Aquí arriba tienes las credenciales de Firebase pre-cargadas y tu botón de Check en vivo.</p>
                         </div>
                     </div>
                     <div class="flex flex-wrap items-center gap-2">
@@ -1337,6 +1326,48 @@
                         </button>
                         <button onclick="window.app.saveBusinessSettings()" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-extrabold rounded-xl text-xs sm:text-sm shadow-md transition flex items-center gap-2">
                             <i class="fa-solid fa-floppy-disk"></i> Guardar Configuración
+                        </button>
+                    </div>
+                </div>
+
+                <!-- BLOQUE PRINCIPAL VISIBLE DE PRIMERO: CREDENCIALES FIREBASE PRE-CARGADAS + BOTÓN CHECK DE CONEXIÓN -->
+                <div id="firebaseCredentialsTopCard" class="bg-emerald-50 border-2 border-emerald-400 p-4 rounded-2xl shadow-sm space-y-3">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-base font-black shrink-0">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs sm:text-sm font-black text-emerald-950 block">🔥 Credenciales de Firebase y Verificador en Vivo</span>
+                                <span class="text-[11px] text-slate-600">Tus llaves están puestas aquí abajo; toca el botón verde para hacer el Check en vivo</span>
+                            </div>
+                        </div>
+                        <span id="adminFirebaseConfigStatus" class="px-2.5 py-1 rounded-full text-[10px] font-black bg-emerald-600 text-white flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-check"></i> Listo para Check
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+                        <div>
+                            <label class="block text-[10px] font-extrabold text-emerald-950 mb-0.5">API Key (apiKey) *</label>
+                            <input id="cfgFbApiKey" type="text" value="AIzaSyCmt_2AmxwubXGVeMOMLu4EoAbKDE2c6Y8" placeholder="AIzaSy..." class="w-full px-2.5 py-2 bg-white border border-emerald-300 rounded-xl font-mono text-xs text-slate-900 font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-extrabold text-emerald-950 mb-0.5">Project ID (projectId) *</label>
+                            <input id="cfgFbProjectId" type="text" value="diverciones-keiler" placeholder="diverciones-keiler" class="w-full px-2.5 py-2 bg-white border border-emerald-300 rounded-xl font-mono text-xs text-slate-900 font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-extrabold text-emerald-950 mb-0.5">App ID (appId)</label>
+                            <input id="cfgFbAppId" type="text" value="1:429246869074:web:942c09725ae89762f7798b" placeholder="1:4292...:web:..." class="w-full px-2.5 py-2 bg-white border border-emerald-300 rounded-xl font-mono text-xs text-slate-900 font-bold">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-1 border-t border-emerald-200/80">
+                        <div id="fbCheckResultBanner" class="text-[11px] font-extrabold text-emerald-800">
+                            ✅ Llaves de "diverciones-keiler" cargadas. Toca el botón verde para verificar conexión.
+                        </div>
+                        <button type="button" id="btnVerifyFirebaseConn" onclick="window.app.verifyFirebaseConnectionNow()" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs shadow-md transition flex items-center justify-center gap-1.5 shrink-0">
+                            <i class="fa-solid fa-plug-circle-check"></i> ✅ Check / Verificar Conexión Ahora
                         </button>
                     </div>
                 </div>
@@ -1444,13 +1475,63 @@
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-8 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xs font-black">2</span>
                             <div>
-                                <h4 class="font-extrabold text-sm text-slate-900">🧮 Configurador de la Calculadora de Invitados (Mesas 4, 6, 8 Sillas, Manteles y Toldas)</h4>
-                                <p class="text-[11px] text-slate-500">Define cuántas sillas lleva cada tipo de mesa y los precios de la calculadora</p>
+                                <h4 class="font-extrabold text-sm text-slate-900">🧮 Menú Configurable del Asistente Inteligente (Posición, Textos, Mesas, Sillas y Precios)</h4>
+                                <p class="text-[11px] text-slate-500">Configura dónde aparece el Asistente (al final de la pantalla o arriba), sus textos, invitados iniciales y precios</p>
                             </div>
                         </div>
-                        <i id="icon-acc-calculadora" class="fa-solid fa-chevron-down text-slate-400 text-xs"></i>
+                        <i id="icon-acc-calculadora" class="fa-solid fa-chevron-up text-slate-400 text-xs"></i>
                     </button>
-                    <div id="acc-calculadora" class="hidden p-4 space-y-3 border-t border-slate-200 bg-indigo-50/30">
+                    <div id="acc-calculadora" class="p-4 space-y-3.5 border-t border-slate-200 bg-indigo-50/30">
+                        <!-- Panel de Control General del Asistente Inteligente (Posición, Estado, Textos e Invitados por Defecto) -->
+                        <div class="bg-white p-3.5 rounded-2xl border-2 border-indigo-200 space-y-3 text-xs">
+                            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-indigo-100 pb-2">
+                                <span class="font-black text-indigo-950 uppercase tracking-wider text-[11px]">
+                                    <i class="fa-solid fa-sliders text-indigo-600 mr-1"></i> Configuración General del Asistente Inteligente en la Pantalla Principal
+                                </span>
+                                <button type="button" onclick="window.app.saveBusinessSettings()" class="px-3 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-[11px] transition flex items-center gap-1">
+                                    <i class="fa-solid fa-floppy-disk"></i> Guardar Cambios del Asistente
+                                </button>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                                <div>
+                                    <label class="block text-[10px] font-extrabold text-slate-700 mb-1">📍 Posición en la Pantalla Principal</label>
+                                    <select id="cfgCalcPosition" onchange="window.app.previewCatalogVisibilityOptions()" class="w-full px-2.5 py-2 border border-indigo-300 rounded-xl font-bold bg-indigo-50/50 text-indigo-950">
+                                        <option value="bottom">⬇️ Al Final de la Pantalla (Debajo del Catálogo)</option>
+                                        <option value="top">⬆️ Arriba (Antes del Catálogo)</option>
+                                        <option value="hidden">🚫 Ocultar Asistente Inteligente</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-extrabold text-slate-700 mb-1">👥 N° de Invitados por Defecto</label>
+                                    <input id="cfgCalcDefaultGuests" type="number" min="4" max="600" step="4" value="40" onchange="window.app.previewCatalogVisibilityOptions()" class="w-full px-2.5 py-2 border border-slate-300 rounded-xl font-black text-slate-900">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-extrabold text-slate-700 mb-1">🏷️ Etiqueta Superior del Asistente</label>
+                                    <input id="cfgCalcBadgeText" type="text" value="🧮 Asistente Inteligente" oninput="window.app.previewCatalogVisibilityOptions()" class="w-full px-2.5 py-2 border border-slate-300 rounded-xl font-bold text-slate-900">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                                <div>
+                                    <label class="block text-[10px] font-extrabold text-slate-700 mb-1">✏️ Título del Asistente Inteligente</label>
+                                    <input id="cfgCalcTitle" type="text" value="¿No sabes cuántas sillas, mesas, manteles o toldas necesitas?" oninput="window.app.previewCatalogVisibilityOptions()" class="w-full px-2.5 py-2 border border-slate-300 rounded-xl font-bold text-slate-900">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-extrabold text-slate-700 mb-1">📝 Subtítulo / Explicación</label>
+                                    <input id="cfgCalcSubtitle" type="text" value="Calcula tu paquete exacto según tus invitados (mesas de 4, 6 u 8 puestos, sillas, manteles y toldas)." oninput="window.app.previewCatalogVisibilityOptions()" class="w-full px-2.5 py-2 border border-slate-300 rounded-xl text-slate-700">
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap items-center gap-4 pt-1">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input id="cfgCalcShowCatalogExtras" type="checkbox" checked onchange="window.app.previewCatalogVisibilityOptions()" class="w-4 h-4 accent-indigo-600 rounded">
+                                    <span class="font-bold text-slate-800">Mostrar selección visual con mini-fotos de equipos del catálogo dentro del asistente</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Creador de Nuevas Opciones para la Calculadora -->
                         <div class="grid grid-cols-1 sm:grid-cols-5 gap-2 bg-white p-3 rounded-xl border border-indigo-200 text-xs">
                             <div>
                                 <label class="block text-[10px] font-bold text-slate-600 mb-0.5">Tipo de Elemento</label>
@@ -1594,32 +1675,19 @@
                     </div>
                 </div>
 
-                <!-- CAJÓN 5: CONEXIÓN FIREBASE Y RESETEAR SISTEMA EN CERO -->
+                <!-- CAJÓN 5: RESETEAR SISTEMA EN CERO CONSERVANDO FIREBASE -->
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-2xs overflow-hidden">
                     <button type="button" onclick="window.app.toggleSettingsAccordion('acc-firebase-reset')" class="w-full p-4 text-left bg-slate-50/80 hover:bg-slate-100/80 flex items-center justify-between gap-3 transition">
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-8 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xs font-black">5</span>
                             <div>
-                                <h4 class="font-extrabold text-sm text-slate-900">🧹 Limpieza / Resetear Sistema en Cero y Llaves Firebase</h4>
+                                <h4 class="font-extrabold text-sm text-slate-900">🧹 Limpieza / Resetear Sistema en Cero</h4>
                                 <p class="text-[11px] text-slate-500">Borra los datos de prueba para cargar tus propios productos sin perder tu Firebase</p>
                             </div>
                         </div>
                         <i id="icon-acc-firebase-reset" class="fa-solid fa-chevron-down text-slate-400 text-xs"></i>
                     </button>
                     <div id="acc-firebase-reset" class="hidden p-4 space-y-4 border-t border-slate-200">
-                        <!-- Firebase Keys -->
-                        <div class="bg-emerald-50/80 border border-emerald-300 p-3.5 rounded-xl space-y-2">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-extrabold text-emerald-950"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Proyecto Firebase Conectado</span>
-                                <span id="adminFirebaseConfigStatus" class="px-2 py-0.5 rounded-full text-[10px] font-black bg-emerald-600 text-white">diverciones-keiler</span>
-                            </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
-                                <input id="cfgFbApiKey" type="text" placeholder="apiKey" class="w-full px-2.5 py-1.5 bg-white border border-emerald-300 rounded-lg font-mono text-xs">
-                                <input id="cfgFbProjectId" type="text" placeholder="projectId" class="w-full px-2.5 py-1.5 bg-white border border-emerald-300 rounded-lg font-mono text-xs">
-                                <input id="cfgFbAppId" type="text" placeholder="appId" class="w-full px-2.5 py-1.5 bg-white border border-emerald-300 rounded-lg font-mono text-xs">
-                            </div>
-                        </div>
-
                         <!-- Reset Zone -->
                         <div class="bg-slate-900 text-white border border-rose-500/80 p-4 rounded-2xl space-y-3">
                             <div class="flex flex-wrap items-center justify-between gap-2">
@@ -1722,8 +1790,8 @@
                             <i class="fa-solid fa-file-invoice-dollar"></i>
                         </div>
                         <div>
-                            <h3 class="font-black text-sm sm:text-base text-slate-900">1. Facturar Mobiliario en Entrega</h3>
-                            <p class="text-[11px] text-slate-500">Crea la factura en el lugar, guarda el GPS y toma foto de la casa</p>
+                            <h3 class="font-black text-sm sm:text-base text-slate-900">1. Facturar NUEVO Pedido en Sitio</h3>
+                            <p class="text-[11px] text-rose-600 font-bold">⚠️ SOLO usar si el cliente NO reservó en tienda. Si ya tiene pedido, usa la lista de la derecha 👉</p>
                         </div>
                     </div>
                 </div>
@@ -1771,6 +1839,15 @@
                             <div>
                                 <label class="text-[10px] font-bold text-slate-500">Longitud GPS</label>
                                 <input id="delivLngInput" type="number" step="0.00001" value="-82.43210" class="w-full px-2.5 py-1.5 bg-white border border-sky-300 rounded-lg font-mono text-xs font-bold">
+                            </div>
+                        </div>
+                        <div class="relative w-full h-40 mt-2 rounded-xl border border-sky-300 overflow-hidden shadow-inner">
+                            <div id="delivNewMiniMap" class="w-full h-full"></div>
+                            <button type="button" onclick="window.app.toggleMiniMapLayer('new')" class="absolute top-2 right-2 z-20 px-2 py-1 bg-white/90 backdrop-blur-md text-sky-900 border border-sky-200 rounded-lg shadow-md text-[10px] font-black flex items-center gap-1 cursor-pointer">
+                                <i class="fa-solid fa-layer-group"></i> Satélite
+                            </button>
+                            <div class="absolute bottom-1 left-1 right-1 z-20 px-2 py-1 bg-black/60 text-white/90 rounded text-[9px] font-bold text-center pointer-events-none">
+                                📍 Puedes arrastrar el pin para ajustar
                             </div>
                         </div>
                         <div>
@@ -1902,6 +1979,12 @@
                         <div class="grid grid-cols-2 gap-1.5">
                             <input id="editInvLat" type="number" step="0.00001" placeholder="Latitud" class="px-2 py-1.5 bg-white border border-slate-300 rounded-lg font-mono">
                             <input id="editInvLng" type="number" step="0.00001" placeholder="Longitud" class="px-2 py-1.5 bg-white border border-slate-300 rounded-lg font-mono">
+                        </div>
+                        <div class="relative w-full h-32 mt-1.5 mb-1.5 rounded-lg border border-slate-300 overflow-hidden shadow-inner">
+                            <div id="editInvMiniMap" class="w-full h-full"></div>
+                            <button type="button" onclick="window.app.toggleMiniMapLayer('edit')" class="absolute top-2 right-2 z-20 px-2 py-1 bg-white/90 backdrop-blur-md text-slate-800 border border-slate-200 rounded shadow-md text-[9px] font-black flex items-center gap-1 cursor-pointer">
+                                <i class="fa-solid fa-layer-group"></i> Satélite
+                            </button>
                         </div>
                         <button type="button" onclick="window.app.captureLiveDeliveryGps('edit')" class="w-full py-2 px-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-extrabold text-[11px] flex items-center justify-center gap-1.5">
                             <i class="fa-solid fa-location-crosshairs"></i> Actualizar con mi GPS Actual
@@ -2146,6 +2229,10 @@
                     <button type="button" onclick="window.app.clearSignaturePad()" class="text-[11px] text-rose-600 font-bold hover:underline">Limpiar Firma</button>
                 </div>
                 <canvas id="signaturePadCanvas" class="w-full h-32 bg-white border-2 border-dashed border-slate-300 rounded-xl touch-none cursor-crosshair"></canvas>
+                <div id="receiptPhotoPreviewBox" class="hidden mt-2">
+                    <span class="text-[10px] font-bold text-slate-500 block mb-1">Vista Previa de Foto a Guardar:</span>
+                    <img id="receiptPhotoPreviewImg" src="" class="w-full h-32 object-cover rounded-xl border-2 border-amber-400">
+                </div>
                 <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
                     <label class="cursor-pointer px-3 py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-950 font-extrabold text-xs flex items-center gap-1.5">
                         <i class="fa-solid fa-camera"></i> 📸 Adjuntar Foto de Entrega / Casa
@@ -2198,6 +2285,10 @@
                 <div>
                     <label class="font-bold text-slate-700 block mb-1">Dirección de Entrega *</label>
                     <input id="manAddress" type="text" placeholder="Ej. Urb. Los Olivos, Casa #12" class="w-full px-3 py-2 border border-slate-300 rounded-xl">
+                </div>
+                <div>
+                    <label class="font-bold text-slate-700 block mb-1">Link de Google Maps (Opcional)</label>
+                    <input id="manGmapsLink" type="url" placeholder="Pega el link de la ubicación aquí" class="w-full px-3 py-2 border border-slate-300 rounded-xl">
                 </div>
                 <div>
                     <label class="font-bold text-slate-700 block mb-1">Cantidades de Equipos:</label>
@@ -2329,32 +2420,56 @@
         <div class="bg-white rounded-3xl max-w-md w-full p-5 sm:p-6 shadow-2xl border-4 border-rose-600 space-y-4">
             <div class="flex items-start justify-between gap-3 border-b border-rose-100 pb-3">
                 <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-2xl bg-rose-600 text-white flex items-center justify-center text-xl font-black animate-bounce shrink-0 shadow-lg">
+                    <div class="w-12 h-12 rounded-2xl bg-rose-600 text-white flex items-center justify-center text-xl font-black shrink-0 shadow-md animate-pulse">
                         <i class="fa-solid fa-triangle-exclamation"></i>
                     </div>
                     <div>
-                        <span class="px-2 py-0.5 rounded bg-amber-400 text-slate-950 font-black text-[10px] uppercase">🔊 ¡Alerta de Conteo en Retiro!</span>
-                        <h3 class="font-black text-base sm:text-lg text-rose-950 mt-0.5">¡OJO CHOFER! Faltan Equipos</h3>
+                        <span class="px-2 py-0.5 rounded bg-rose-100 text-rose-800 font-black text-[10px] uppercase">Alerta de Inventario</span>
+                        <h3 class="font-black text-base sm:text-lg text-slate-900 mt-0.5">Conteo Incompleto</h3>
                     </div>
                 </div>
-                <button type="button" onclick="window.app.closeIncompleteReturnModal()" class="px-2.5 py-1 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 font-extrabold text-xs">
+                <button type="button" onclick="window.app.closeIncompleteReturnModal()" class="px-2.5 py-1 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-extrabold text-xs">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
 
-            <div id="incompleteReturnAlertBody" class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-4 text-xs space-y-2 text-slate-800">
+            <div id="incompleteReturnAlertBody" class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-3.5 text-xs space-y-2 text-slate-800">
                 <!-- Populated dynamically by JS -->
             </div>
 
-            <div class="space-y-2 pt-1">
-                <button type="button" onclick="window.app.resolveIncompleteReturnAction('STREET')" class="w-full py-3 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs transition flex items-center justify-center gap-2 shadow-sm">
-                    <i class="fa-solid fa-truck-clock"></i> 1. Dejar pendientes en la calle (Pasar luego a recoger)
+            <div class="flex flex-col gap-2 pt-1">
+                <button type="button" onclick="window.app.resolveIncompleteReturnAction('PENDING')" class="w-full py-2.5 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs shadow-md transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-clock"></i> 1. Dejar pendientes en calle (Recojo luego)
                 </button>
-                <button type="button" onclick="window.app.resolveIncompleteReturnAction('DAMAGED')" class="w-full py-3 px-4 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-black text-xs transition flex items-center justify-center gap-2 shadow-sm">
-                    <i class="fa-solid fa-hand-holding-dollar"></i> 2. Cliente las perdió / rompió (Sumar cobro a su deuda)
+                <button type="button" onclick="window.app.resolveIncompleteReturnAction('DAMAGED')" class="w-full py-2.5 px-4 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-black text-xs shadow-md transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-heart-crack"></i> 2. Cliente las perdió/rompió (Cobrar Daño)
                 </button>
                 <button type="button" onclick="window.app.resolveIncompleteReturnAction('COMPLETE')" class="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs transition flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-check-double"></i> 3. Corregir conteo: ¡Ya subí todo completo al camión!
+                    <i class="fa-solid fa-check-double"></i> 3. Corregir conteo: ¡Ya subí todo al camión!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL VISOR DE FOTOS EN PANTALLA COMPLETA (ZOOM PARA CATÁLOGO Y ENTREGAS) -->
+    <div id="housePhotoZoomModal" onclick="if(event.target === this) window.app.closePhotoZoomModal()" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 hidden items-center justify-center p-3 sm:p-6">
+        <div class="relative bg-slate-900 border border-slate-700 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl flex flex-col max-h-[92vh]">
+            <div class="flex items-center justify-between px-4 py-3 bg-slate-950/80 border-b border-slate-800 text-white">
+                <div class="min-w-0 pr-2">
+                    <h3 id="housePhotoZoomTitle" class="font-extrabold text-xs sm:text-sm text-white truncate">📸 Vista Ampliada del Equipo</h3>
+                    <p id="housePhotoZoomSubtitle" class="text-[11px] text-amber-300 font-bold truncate"></p>
+                </div>
+                <button type="button" onclick="window.app.closePhotoZoomModal()" class="px-3 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-extrabold text-xs flex items-center gap-1 shrink-0 shadow-sm">
+                    <i class="fa-solid fa-xmark"></i> <span>Cerrar</span>
+                </button>
+            </div>
+            <div class="relative flex-1 bg-black flex items-center justify-center overflow-hidden p-2">
+                <img id="housePhotoZoomImg" src="" alt="Imagen ampliada" onerror="this.src='https://placehold.co/800x600/1e293b/ffffff?text=Imagen'" class="max-h-[70vh] w-auto max-w-full object-contain rounded-xl shadow-lg">
+            </div>
+            <div id="housePhotoZoomFooter" class="px-4 py-3 bg-slate-950 border-t border-slate-800 flex items-center justify-between gap-2">
+                <span class="text-[11px] text-slate-400"><i class="fa-solid fa-magnifying-glass-plus text-brand-400 mr-1"></i> Toca fuera o en "Cerrar" para volver</span>
+                <button type="button" id="housePhotoZoomAddBtn" class="hidden px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-black text-xs transition flex items-center gap-1.5 shadow-md">
+                    <i class="fa-solid fa-cart-plus"></i> <span>Agregar a Cotización</span>
                 </button>
             </div>
         </div>
@@ -2393,6 +2508,44 @@
                 <button type="button" onclick="window.app.confirmProceedOverbooking()" class="w-full sm:w-1/2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs shadow-lg transition flex items-center justify-center gap-1.5">
                     <i class="fa-solid fa-circle-check"></i> Sí, Facturar Igual (Doble Turno)
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE DETALLE DEL PRODUCTO (CATÁLOGO) -->
+    <div id="productDetailModal" onclick="if(event.target === this) window.app.closeProductDetailModal()" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+            <div class="relative w-full h-64 sm:h-80 bg-black shrink-0 flex items-center justify-center">
+                <img id="pdModalImg" src="" class="w-full h-full object-contain">
+                <button type="button" onclick="window.app.closeProductDetailModal()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center backdrop-blur-md hover:bg-black/80 transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <span id="pdModalBadge" class="hidden absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-black uppercase bg-amber-400 text-slate-950 shadow-md">PROMO</span>
+            </div>
+            <div class="p-5 space-y-4 overflow-y-auto">
+                <div>
+                    <div class="flex items-start justify-between gap-3">
+                        <h3 id="pdModalName" class="font-black text-lg sm:text-xl text-slate-900 leading-tight">Nombre del Equipo</h3>
+                        <div class="text-right shrink-0">
+                            <span id="pdModalPrice" class="block text-xl font-black text-brand-700">$0.00</span>
+                            <span class="text-[10px] text-slate-500 font-bold uppercase">Por Día</span>
+                        </div>
+                    </div>
+                    <p id="pdModalDesc" class="text-xs text-slate-600 mt-2 leading-relaxed"></p>
+                </div>
+                <div id="pdModalSpecs" class="grid grid-cols-2 gap-2 text-[11px] font-bold">
+                    <!-- Especificaciones insertadas por JS -->
+                </div>
+                <div class="flex items-center justify-between gap-3 pt-4 border-t border-slate-100 shrink-0">
+                    <div class="flex items-center bg-slate-100 border border-slate-200 rounded-xl p-1">
+                        <button type="button" onclick="window.app.adjustPdModalQty(-1)" class="w-8 h-8 flex items-center justify-center text-slate-600 hover:bg-slate-200 rounded-lg font-black text-lg transition">-</button>
+                        <input type="number" id="pdModalQty" value="1" min="1" class="w-10 text-center font-black bg-transparent border-none focus:outline-none text-slate-900">
+                        <button type="button" onclick="window.app.adjustPdModalQty(1)" class="w-8 h-8 flex items-center justify-center text-slate-600 hover:bg-slate-200 rounded-lg font-black text-lg transition">+</button>
+                    </div>
+                    <button type="button" id="pdModalAddBtn" class="flex-1 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-black text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-cart-plus"></i> Añadir a Cotización
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -2690,6 +2843,12 @@
                 visCalcCollapsed: true,
                 visTwoColsMobile: true,
                 visQuickCarousel: true,
+                calcPosition: 'bottom',
+                calcDefaultGuests: 40,
+                calcBadgeText: '🧮 Asistente Inteligente',
+                calcTitle: '¿No sabes cuántas sillas, mesas, manteles o toldas necesitas?',
+                calcSubtitle: 'Calcula tu paquete exacto según tus invitados (mesas de 4, 6 u 8 puestos, sillas, manteles y toldas).',
+                calcShowCatalogExtras: true,
                 depositPercent: 30,
                 weekendExtraPct: 60,
                 freeKm: 5,
@@ -2784,7 +2943,7 @@
             renderAllViews();
 
             if (typeof fbSaveOrder === 'function') {
-                try { await fbSaveOrder(orderObj); } catch (e) { console.warn("Error guardando pedido en Firebase:", e); }
+                fbSaveOrder(orderObj).catch(e => console.warn("Error guardando pedido en Firebase:", e));
             }
         }
 
@@ -2795,7 +2954,7 @@
             renderAllViews();
 
             if (typeof fbSaveCatalogItem === 'function') {
-                try { await fbSaveCatalogItem(itemObj); } catch (e) { console.warn("Error guardando catálogo en Firebase:", e); }
+                fbSaveCatalogItem(itemObj).catch(e => console.warn("Error guardando catálogo en Firebase:", e));
             }
         }
 
@@ -3080,6 +3239,31 @@
         function applyCatalogVisibilityModes() {
             const s = state.settings;
 
+            // Posición y textos configurables del Asistente Inteligente (Al final de la pantalla por defecto, arriba u oculto)
+            const calcSec = document.getElementById('guestCalculatorSection');
+            const calcTopAnchor = document.getElementById('guestCalculatorTopAnchor');
+            const calcBottomAnchor = document.getElementById('guestCalculatorBottomAnchor');
+            if (calcSec && calcTopAnchor && calcBottomAnchor) {
+                const pos = s.calcPosition || 'bottom';
+                if (pos === 'hidden') {
+                    calcSec.classList.add('hidden');
+                } else {
+                    calcSec.classList.remove('hidden');
+                    if (pos === 'top') {
+                        calcTopAnchor.after(calcSec);
+                    } else {
+                        calcBottomAnchor.after(calcSec);
+                    }
+                }
+            }
+
+            const badgeEl = document.getElementById('calcAssistantBadgeText');
+            const titleEl = document.getElementById('calcAssistantTitleText');
+            const subEl = document.getElementById('calcAssistantSubtitleText');
+            if (badgeEl && s.calcBadgeText) badgeEl.textContent = s.calcBadgeText;
+            if (titleEl && s.calcTitle) titleEl.textContent = s.calcTitle;
+            if (subEl && s.calcSubtitle) subEl.textContent = s.calcSubtitle;
+
             // Opción 1: Subir el Catálogo arriba del todo o dejarlo en su lugar estándar
             const catalogSec = document.getElementById('catalogSection');
             const topSlot = document.getElementById('catalogTopSlotAnchor');
@@ -3123,7 +3307,7 @@
                         const inCart = state.cart.find(c => c.id === item.id)?.qty || 0;
                         return `
                             <div class="shrink-0 w-44 sm:w-52 bg-slate-50 hover:bg-brand-50/60 border border-slate-200 rounded-xl p-2 flex items-center gap-2.5 transition">
-                                <img onclick="window.app.focusPromoItemInCatalog('${item.id}')" src="${item.photo}" onerror="this.src='https://placehold.co/100x100/ede9fe/6d28d9?text=Equipo'" class="w-12 h-12 rounded-lg object-cover shrink-0 border border-slate-200 cursor-pointer">
+                                <img onclick="window.app.openProductDetailModal('${item.id}')" src="${item.photo}" onerror="this.src='https://placehold.co/100x100/ede9fe/6d28d9?text=Equipo'" class="w-12 h-12 rounded-lg object-cover shrink-0 border border-slate-200 cursor-pointer" title="Ver detalles del equipo">
                                 <div class="min-w-0 flex-1">
                                     <p onclick="window.app.focusPromoItemInCatalog('${item.id}')" class="text-[11px] font-extrabold text-slate-900 truncate cursor-pointer">${item.name}</p>
                                     <div class="flex items-center justify-between mt-1">
@@ -3186,8 +3370,8 @@
                 return `
                     <div id="catalogCard-${item.id}" class="bg-white rounded-2xl border ${item.isPromo ? 'border-amber-400 ring-2 ring-amber-300/60' : 'border-slate-200/90'} shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between group">
                         <div>
-                            <div class="relative ${imgHeightClass} bg-slate-100 overflow-hidden">
-                                <img src="${item.photo}" alt="${item.name}" onerror="this.src='https://placehold.co/600x400/ede9fe/6d28d9?text=Mobiliario'" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div onclick="window.app.openProductDetailModal('${item.id}')" class="relative ${imgHeightClass} bg-slate-100 overflow-hidden cursor-pointer" title="Ver información y foto completa">
+                                <img src="${item.photo}" alt="${item.name}" onerror="this.src='https://placehold.co/600x400/ede9fe/6d28d9?text=Mobiliario'" class="w-full h-full object-cover transition duration-300">
                                 <span class="absolute top-2 left-2 sm:top-3 sm:left-3 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-[11px] font-bold bg-slate-900/75 text-white backdrop-blur-xs">
                                     ${item.category}
                                 </span>
@@ -4276,6 +4460,7 @@ ${itemsSummary}
             const stock = parseInt(document.getElementById('invStock').value || '1', 10);
             const spaceReq = document.getElementById('invSpaceReq')?.value.trim() || '';
             const requiresPower = document.getElementById('invRequiresPower')?.checked || false;
+            const accessories = document.getElementById('invAccessories')?.value.trim() || '';
             const isPromo = document.getElementById('invIsPromo')?.checked || false;
             const promoBadge = document.getElementById('invPromoBadge')?.value.trim() || '🔥 OFERTA ESPECIAL';
             const promoText = document.getElementById('invPromoText')?.value.trim() || '';
@@ -4295,6 +4480,7 @@ ${itemsSummary}
                 stock: Math.max(1, stock),
                 spaceReq,
                 requiresPower,
+                accessories,
                 isPromo,
                 promoBadge: isPromo ? promoBadge : '',
                 promoText: isPromo ? promoText : '',
@@ -4309,6 +4495,7 @@ ${itemsSummary}
             document.getElementById('invStock').value = '';
             if (document.getElementById('invSpaceReq')) document.getElementById('invSpaceReq').value = '';
             if (document.getElementById('invRequiresPower')) document.getElementById('invRequiresPower').checked = false;
+            if (document.getElementById('invAccessories')) document.getElementById('invAccessories').value = '';
             if (document.getElementById('invIsPromo')) document.getElementById('invIsPromo').checked = false;
             document.getElementById('invPromoFields')?.classList.add('hidden');
             state.compressedPhotoDataUrl = null;
@@ -4625,7 +4812,7 @@ ${itemsSummary}
                 catalogCategories[item.category].push(item);
             });
 
-            const catalogCategoriesHtml = Object.entries(catalogCategories).map(([catName, items]) => `
+            const catalogCategoriesHtml = (state.settings.calcShowCatalogExtras === false) ? '' : Object.entries(catalogCategories).map(([catName, items]) => `
                 <div class="space-y-1.5 pt-2 border-t border-slate-100">
                     <span class="text-[11px] font-extrabold text-brand-800 block">🎪 Categoría del Catálogo: ${catName} (Toca para sumar a tu paquete calculado)</span>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -4906,7 +5093,7 @@ ${itemsSummary}
             if (!id) return;
             state.catalog = state.catalog.filter(i => i.id !== id);
             if (typeof fbDeleteCatalogItem === 'function') {
-                try { await fbDeleteCatalogItem(id); } catch (e) {}
+                fbDeleteCatalogItem(id).catch(e => {});
             }
             closeEditCatalogModal();
             renderAllViews();
@@ -4929,6 +5116,14 @@ ${itemsSummary}
             setChk('cfgVisCalcCollapsed', s.visCalcCollapsed !== false);
             setChk('cfgVisTwoColsMobile', s.visTwoColsMobile !== false);
             setChk('cfgVisQuickCarousel', s.visQuickCarousel !== false);
+            setVal('cfgCalcPosition', s.calcPosition || 'bottom');
+            setVal('cfgCalcDefaultGuests', s.calcDefaultGuests ?? 40);
+            setVal('cfgCalcBadgeText', s.calcBadgeText || '🧮 Asistente Inteligente');
+            setVal('cfgCalcTitle', s.calcTitle || '¿No sabes cuántas sillas, mesas, manteles o toldas necesitas?');
+            setVal('cfgCalcSubtitle', s.calcSubtitle || 'Calcula tu paquete exacto según tus invitados (mesas de 4, 6 u 8 puestos, sillas, manteles y toldas).');
+            setChk('cfgCalcShowCatalogExtras', s.calcShowCatalogExtras !== false);
+            const guestInp = document.getElementById('calcGuestCountInput');
+            if (guestInp && s.calcDefaultGuests) guestInp.value = s.calcDefaultGuests;
             setVal('cfgDepositPercent', s.depositPercent ?? 30);
             setVal('cfgWeekendExtraPct', s.weekendExtraPct ?? 60);
             setVal('cfgFreeKm', s.freeKm ?? 5);
@@ -4963,6 +5158,14 @@ ${itemsSummary}
             s.visCalcCollapsed = document.getElementById('cfgVisCalcCollapsed')?.checked ?? true;
             s.visTwoColsMobile = document.getElementById('cfgVisTwoColsMobile')?.checked ?? true;
             s.visQuickCarousel = document.getElementById('cfgVisQuickCarousel')?.checked ?? true;
+            s.calcPosition = document.getElementById('cfgCalcPosition')?.value || 'bottom';
+            s.calcDefaultGuests = Math.max(4, parseInt(document.getElementById('cfgCalcDefaultGuests')?.value || '40', 10));
+            s.calcBadgeText = document.getElementById('cfgCalcBadgeText')?.value.trim() || '🧮 Asistente Inteligente';
+            s.calcTitle = document.getElementById('cfgCalcTitle')?.value.trim() || s.calcTitle;
+            s.calcSubtitle = document.getElementById('cfgCalcSubtitle')?.value.trim() || s.calcSubtitle;
+            s.calcShowCatalogExtras = document.getElementById('cfgCalcShowCatalogExtras')?.checked ?? true;
+            const guestInp = document.getElementById('calcGuestCountInput');
+            if (guestInp) guestInp.value = s.calcDefaultGuests;
             state.isCalcExpandedManual = null;
             s.depositPercent = parseFloat(document.getElementById('cfgDepositPercent')?.value || '30');
             s.weekendExtraPct = parseFloat(document.getElementById('cfgWeekendExtraPct')?.value || '60');
@@ -5045,12 +5248,15 @@ ${itemsSummary}
             const phone = document.getElementById('manPhone').value.trim();
             const eventDate = document.getElementById('manDate').value || TODAY_STR;
             const paidAmount = parseFloat(document.getElementById('manInitialPaid').value || '0');
-            const address = document.getElementById('manAddress').value.trim();
+            const addressBase = document.getElementById('manAddress').value.trim();
+            const gmapsLink = document.getElementById('manGmapsLink')?.value.trim();
 
-            if (!clientName || !address) {
+            if (!clientName || !addressBase) {
                 showToast('Completa el nombre del cliente y la dirección', 'warning');
                 return;
             }
+
+            const address = gmapsLink ? `${addressBase} - GPS: ${gmapsLink}` : addressBase;
 
             const selectedItems = [];
             let total = 0;
@@ -5078,8 +5284,16 @@ ${itemsSummary}
             }
 
             // Generate slight GPS offset around warehouse for quick demo placement
-            const lat = Number(state.settings.baseLat) + (Math.random() - 0.5) * 0.03;
-            const lng = Number(state.settings.baseLng) + (Math.random() - 0.5) * 0.03;
+            let lat = Number(state.settings.baseLat) + (Math.random() - 0.5) * 0.03;
+            let lng = Number(state.settings.baseLng) + (Math.random() - 0.5) * 0.03;
+
+            if (gmapsLink) {
+                const match = gmapsLink.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/) || gmapsLink.match(/(?:q|ll|place\/)=(-?\d+\.\d+),(-?\d+\.\d+)/);
+                if (match) {
+                    lat = Number(match[1]);
+                    lng = Number(match[2]);
+                }
+            }
 
             const finalizeManualOrderSave = async (hasDoubleShiftWarning) => {
                 const ord = {
@@ -5718,6 +5932,69 @@ ${itemsSummary}
 
         // --- EXPOSE PUBLIC CONTROLLER METHODS TO WINDOW ---
         window.app = {
+            openProductDetailModal(itemId) {
+                const item = state.catalog.find(i => i.id === itemId);
+                if (!item) return;
+
+                const modal = document.getElementById('productDetailModal');
+                if (!modal) return;
+
+                document.getElementById('pdModalImg').src = item.photo;
+                document.getElementById('pdModalName').textContent = item.name;
+                document.getElementById('pdModalPrice').textContent = `$${Number(item.price).toFixed(2)}`;
+                
+                const badge = document.getElementById('pdModalBadge');
+                if (item.isPromo) {
+                    badge.textContent = item.promoBadge || 'OFERTA';
+                    badge.classList.remove('hidden');
+                } else {
+                    badge.classList.add('hidden');
+                }
+
+                document.getElementById('pdModalDesc').textContent = item.promoText || 'Mobiliario o equipo de alta calidad, limpio y garantizado para tu evento.';
+
+                const specsDiv = document.getElementById('pdModalSpecs');
+                let specsHtml = '';
+                if (item.spaceReq) specsHtml += `<div class="bg-indigo-50 text-indigo-900 p-2 rounded-lg"><i class="fa-solid fa-ruler-combined mr-1 text-indigo-500"></i> <strong>Espacio:</strong> ${item.spaceReq}</div>`;
+                if (item.requiresPower) specsHtml += `<div class="bg-amber-50 text-amber-900 p-2 rounded-lg"><i class="fa-solid fa-plug mr-1 text-amber-500"></i> <strong>Corriente:</strong> 110V</div>`;
+                specsHtml += `<div class="bg-emerald-50 text-emerald-900 p-2 rounded-lg"><i class="fa-solid fa-boxes-stacked mr-1 text-emerald-500"></i> <strong>Stock Total:</strong> ${item.stock} uds</div>`;
+                if (item.accessories) specsHtml += `<div class="col-span-2 bg-slate-50 text-slate-700 p-2 border border-slate-200 rounded-lg mt-1"><i class="fa-solid fa-list-check mr-1 text-slate-500"></i> <strong>Incluye:</strong> ${item.accessories}</div>`;
+                specsDiv.innerHTML = specsHtml;
+                
+                const inCart = state.cart.find(c => c.id === item.id)?.qty || 1;
+                document.getElementById('pdModalQty').value = inCart;
+
+                document.getElementById('pdModalAddBtn').onclick = () => {
+                    const qty = parseInt(document.getElementById('pdModalQty').value || '1', 10);
+                    const existing = state.cart.find(c => c.id === itemId);
+                    if (existing) {
+                        existing.qty = qty;
+                    } else {
+                        state.cart.push({ id: item.id, name: item.name, price: Number(item.price), qty: qty, photo: item.photo });
+                    }
+                    updateCartUI();
+                    renderCatalog();
+                    window.app.closeProductDetailModal();
+                    showToast(`${qty}x ${item.name} agregado a tu cotización`, 'success');
+                };
+
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            },
+            closeProductDetailModal() {
+                const modal = document.getElementById('productDetailModal');
+                if (modal) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            },
+            adjustPdModalQty(delta) {
+                const inp = document.getElementById('pdModalQty');
+                if (!inp) return;
+                let val = parseInt(inp.value || '1', 10) + delta;
+                if (val < 1) val = 1;
+                inp.value = val;
+            },
             switchMainView(view) {
                 if ((view === 'admin' || view === 'deliveries') && !state.isAdminAuthenticated) {
                     state.pendingTargetView = view;
@@ -5846,13 +6123,40 @@ ${itemsSummary}
                 inp.value = curr ? `${curr} • ${noteText}` : noteText;
                 showToast(`Nota agregada: ${noteText}`, 'info');
             },
-            openPhotoZoomModal(src, title) {
+            zoomCatalogItemPhoto(itemId) {
+                const item = state.catalog.find(i => i.id === itemId);
+                if (!item) return;
+                const specs = [
+                    `$${Number(item.price).toFixed(2)} /día`,
+                    item.spaceReq ? `📐 ${item.spaceReq}` : '',
+                    item.requiresPower ? '🔌 Requiere 110V' : ''
+                ].filter(Boolean).join(' • ');
+                this.openPhotoZoomModal(item.photo, item.name, specs, item.id);
+            },
+            openPhotoZoomModal(src, title, subtitle = '', catalogItemId = null) {
                 if (!src) return;
                 const modal = document.getElementById('housePhotoZoomModal');
                 const img = document.getElementById('housePhotoZoomImg');
                 const ttl = document.getElementById('housePhotoZoomTitle');
+                const sub = document.getElementById('housePhotoZoomSubtitle');
+                const addBtn = document.getElementById('housePhotoZoomAddBtn');
                 if (img) img.src = src;
-                if (ttl) ttl.textContent = title || '📸 Foto de la Casa / Entrega';
+                if (ttl) ttl.textContent = title || '📸 Vista Ampliada';
+                if (sub) {
+                    sub.textContent = subtitle || '';
+                    sub.classList.toggle('hidden', !subtitle);
+                }
+                if (addBtn) {
+                    if (catalogItemId) {
+                        addBtn.classList.remove('hidden');
+                        addBtn.onclick = () => {
+                            this.addItemToQuote(catalogItemId);
+                            this.closePhotoZoomModal();
+                        };
+                    } else {
+                        addBtn.classList.add('hidden');
+                    }
+                }
                 if (modal) {
                     modal.classList.remove('hidden');
                     modal.classList.add('flex');
@@ -6829,7 +7133,7 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
                 if (!ordId) return;
                 state.orders = state.orders.filter(o => o.id !== ordId);
                 if (typeof fbDeleteOrder === 'function') {
-                    try { await fbDeleteOrder(ordId); } catch (e) {}
+                    fbDeleteOrder(ordId).catch(e => {});
                 }
                 this.closeEditInvoiceModal();
                 renderAllViews();
@@ -7083,9 +7387,9 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
                 });
                 document.querySelectorAll('.nav-cat-link').forEach(btn => {
                     if (btn.getAttribute('data-navcat') === cat) {
-                        btn.className = 'nav-cat-link px-2.5 sm:px-3.5 py-1.5 rounded-xl text-[11px] sm:text-xs font-bold bg-brand-600 text-white shadow-2xs transition flex items-center gap-1.5';
+                        btn.className = 'nav-cat-link px-2 py-1 rounded-lg text-[10px] sm:text-xs font-bold bg-brand-600 text-white shadow-2xs transition flex items-center gap-1';
                     } else {
-                        btn.className = 'nav-cat-link px-2.5 sm:px-3.5 py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold bg-white text-slate-700 hover:bg-brand-50 border border-slate-200/80 transition flex items-center gap-1.5';
+                        btn.className = 'nav-cat-link px-2 py-1 rounded-lg text-[10px] sm:text-xs font-semibold bg-white text-slate-700 hover:bg-brand-50 border border-slate-200/80 transition flex items-center gap-1';
                     }
                 });
                 renderCatalog();
@@ -7316,6 +7620,10 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
                 const modal = document.getElementById('receiptContractModal');
                 modal.classList.remove('hidden');
                 modal.classList.add('flex');
+                
+                const pBox = document.getElementById('receiptPhotoPreviewBox');
+                if (pBox) pBox.classList.add('hidden');
+
                 setTimeout(() => initSignaturePad(), 120);
             },
             clearSignaturePad() {
@@ -7336,6 +7644,14 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
                         canvas.height = img.height * scale;
                         canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
                         state.tempEvidencePhotoDataUrl = canvas.toDataURL('image/jpeg', 0.65);
+                        
+                        const pBox = document.getElementById('receiptPhotoPreviewBox');
+                        const pImg = document.getElementById('receiptPhotoPreviewImg');
+                        if (pBox && pImg) {
+                            pImg.src = state.tempEvidencePhotoDataUrl;
+                            pBox.classList.remove('hidden');
+                        }
+
                         showToast('Foto de evidencia comprimida (~40 KB) lista para guardar', 'info');
                     };
                     img.src = e.target.result;
@@ -7411,9 +7727,16 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
                 state.settings.visCalcCollapsed = document.getElementById('cfgVisCalcCollapsed')?.checked ?? true;
                 state.settings.visTwoColsMobile = document.getElementById('cfgVisTwoColsMobile')?.checked ?? true;
                 state.settings.visQuickCarousel = document.getElementById('cfgVisQuickCarousel')?.checked ?? true;
+                state.settings.calcPosition = document.getElementById('cfgCalcPosition')?.value || 'bottom';
+                state.settings.calcDefaultGuests = Math.max(4, parseInt(document.getElementById('cfgCalcDefaultGuests')?.value || '40', 10));
+                state.settings.calcBadgeText = document.getElementById('cfgCalcBadgeText')?.value.trim() || '🧮 Asistente Inteligente';
+                state.settings.calcTitle = document.getElementById('cfgCalcTitle')?.value.trim() || state.settings.calcTitle;
+                state.settings.calcSubtitle = document.getElementById('cfgCalcSubtitle')?.value.trim() || state.settings.calcSubtitle;
+                state.settings.calcShowCatalogExtras = document.getElementById('cfgCalcShowCatalogExtras')?.checked ?? true;
                 state.isCalcExpandedManual = null;
+                renderGuestCalculator();
                 renderCatalog();
-                showToast('Vista del catálogo actualizada en vivo. Recuerda tocar "Guardar Configuración".', 'info');
+                showToast('Vista del catálogo y del Asistente Inteligente actualizada en vivo.', 'info');
             },
             focusPromoItemInCatalog,
             openEditCatalogModal,
@@ -7443,6 +7766,75 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
             openNewManualOrderModal,
             closeManualOrderModal,
             saveManualOrder,
+            async verifyFirebaseConnectionNow() {
+                const btn = document.getElementById('btnVerifyFirebaseConn');
+                const resultBanner = document.getElementById('fbCheckResultBanner');
+                const topBadge = document.getElementById('cloudStatusBadge');
+                const adminStatus = document.getElementById('adminFirebaseConfigStatus');
+
+                const fbKey = document.getElementById('cfgFbApiKey')?.value.trim();
+                const fbProj = document.getElementById('cfgFbProjectId')?.value.trim();
+                const fbApp = document.getElementById('cfgFbAppId')?.value.trim();
+
+                if (!fbKey || !fbProj) {
+                    showToast('Ingresa al menos el API Key y el Project ID de Firebase', 'warning');
+                    if (resultBanner) {
+                        resultBanner.className = 'text-[11px] font-extrabold text-rose-600';
+                        resultBanner.textContent = '❌ Faltan credenciales (API Key o Project ID).';
+                    }
+                    return;
+                }
+
+                CUSTOM_FIREBASE_CONFIG.apiKey = fbKey;
+                CUSTOM_FIREBASE_CONFIG.projectId = fbProj;
+                CUSTOM_FIREBASE_CONFIG.authDomain = `${fbProj}.firebaseapp.com`;
+                CUSTOM_FIREBASE_CONFIG.storageBucket = `${fbProj}.firebasestorage.app`;
+                if (fbApp) CUSTOM_FIREBASE_CONFIG.appId = fbApp;
+                state.appId = fbProj;
+
+                if (btn) {
+                    btn.disabled = true;
+                    btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Verificando con Firebase...`;
+                }
+                if (resultBanner) {
+                    resultBanner.className = 'text-[11px] font-bold text-amber-700';
+                    resultBanner.textContent = '⏳ Haciendo prueba real con Firestore (' + fbProj + ')...';
+                }
+
+                try {
+                    if (typeof triggerFirebaseReconnect === 'function') {
+                        const ok = await triggerFirebaseReconnect(true);
+                        if (ok) {
+                            if (resultBanner) {
+                                resultBanner.className = 'text-[11px] font-extrabold text-emerald-700';
+                                resultBanner.innerHTML = `✅ ¡Conexión verificada con éxito al proyecto <strong>${fbProj}</strong>! (${new Date().toLocaleTimeString()})`;
+                            }
+                            showToast(`✅ Conexión exitosa con Firebase (${fbProj})`, 'success');
+                        } else {
+                            throw new Error('No se pudo validar lectura/escritura en Firestore.');
+                        }
+                    }
+                } catch (err) {
+                    if (topBadge) {
+                        topBadge.className = 'inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30';
+                        topBadge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span> Sin conexión Firebase';
+                    }
+                    if (adminStatus) {
+                        adminStatus.className = 'px-2.5 py-1 rounded-full text-[10px] font-black bg-rose-600 text-white';
+                        adminStatus.textContent = '❌ Error de Conexión';
+                    }
+                    if (resultBanner) {
+                        resultBanner.className = 'text-[11px] font-extrabold text-rose-600';
+                        resultBanner.textContent = `❌ No se pudo conectar (${err?.message || 'Revisa tus reglas de Firestore o tu API Key'}).`;
+                    }
+                    showToast('Error al verificar Firebase. Revisa tus credenciales o reglas.', 'error');
+                } finally {
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.innerHTML = `<i class="fa-solid fa-plug-circle-check"></i> ✅ Check / Verificar Conexión Ahora`;
+                    }
+                }
+            },
             toggleResetConfirm(show) {
                 const box = document.getElementById('resetConfirmArea');
                 if (box) box.classList.toggle('hidden', !show);
@@ -7592,6 +7984,14 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
             populateSettingsInputs();
             renderAllViews();
 
+            // Bloquear el scroll del fondo cuando haya cualquier ventana/modal abierto
+            const modals = document.querySelectorAll('.fixed.inset-0.z-50');
+            const observer = new MutationObserver(() => {
+                const anyOpen = Array.from(modals).some(m => !m.classList.contains('hidden'));
+                document.body.classList.toggle('overflow-hidden', anyOpen);
+            });
+            modals.forEach(m => observer.observe(m, { attributes: true, attributeFilter: ['class'] }));
+
             // Rotate floating promo notifications every 9 seconds so customers see different active offers
             setInterval(() => {
                 const promos = state.catalog.filter(i => i.isPromo);
@@ -7626,29 +8026,37 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
 
     <!-- Non-Blocking Firebase Cloud Sync Module (diverciones-keiler) -->
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
         import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, doc, setDoc, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, collection, doc, setDoc, getDocs, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        async function connectFirebaseCloud() {
+        let unsubCatalog = null;
+        let unsubOrders = null;
+        let unsubSettings = null;
+
+        async function connectFirebaseCloud(forceVerify = false) {
             const badge = document.getElementById('cloudStatusBadge');
             const adminStatus = document.getElementById('adminFirebaseConfigStatus');
+            const resultBanner = document.getElementById('fbCheckResultBanner');
             try {
                 let firebaseConfig = null;
                 if (CUSTOM_FIREBASE_CONFIG.apiKey && CUSTOM_FIREBASE_CONFIG.projectId) {
-                    firebaseConfig = CUSTOM_FIREBASE_CONFIG;
+                    firebaseConfig = { ...CUSTOM_FIREBASE_CONFIG };
                 } else if (typeof __firebase_config !== 'undefined' && __firebase_config) {
                     firebaseConfig = JSON.parse(__firebase_config);
                 } else {
-                    return;
+                    return false;
                 }
 
-                const app = initializeApp(firebaseConfig);
+                const appName = `fc-${firebaseConfig.projectId || 'default'}`;
+                const existingApp = getApps().find(a => a.name === appName);
+                const app = existingApp || initializeApp(firebaseConfig, appName);
                 try { getAnalytics(app); } catch (anErr) {}
                 const auth = getAuth(app);
                 const db = getFirestore(app);
                 state.db = db;
+                state.appId = firebaseConfig.projectId || 'diverciones-keiler';
 
                 fbSaveOrder = async (orderObj) => {
                     const serialized = { ...orderObj, itemsJson: JSON.stringify(orderObj.items) };
@@ -7682,24 +8090,36 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
                     console.warn("Aviso Auth (usando sesión directa a Firestore):", authErr);
                 }
 
+                // Prueba real de ping/lectura a Firestore para verificar que las credenciales y permisos funcionan de verdad
+                const testCol = collection(db, 'artifacts', state.appId, 'public', 'data', 'configuracion');
+                await getDocs(testCol);
+
+                if (typeof unsubCatalog === 'function') unsubCatalog();
+                if (typeof unsubOrders === 'function') unsubOrders();
+                if (typeof unsubSettings === 'function') unsubSettings();
+
                 const activateListeners = (usr) => {
-                    if (state.isCloudConnected) return;
-                    state.user = usr || { uid: 'admin-diverciones-keiler' };
+                    state.user = usr || { uid: 'admin-' + state.appId };
                     state.isCloudConnected = true;
 
                     if (badge) {
-                        badge.className = 'inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800';
-                        badge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Firebase Conectado (diverciones-keiler)';
+                        badge.className = 'inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40';
+                        badge.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Conectado (${state.appId})`;
                     }
                     if (adminStatus) {
-                        adminStatus.textContent = '✅ Conectado a diverciones-keiler';
+                        adminStatus.className = 'px-2.5 py-1 rounded-full text-[10px] font-black bg-emerald-600 text-white flex items-center gap-1';
+                        adminStatus.innerHTML = `<i class="fa-solid fa-circle-check"></i> Conectado: ${state.appId}`;
+                    }
+                    if (resultBanner) {
+                        resultBanner.className = 'text-[11px] font-extrabold text-emerald-700';
+                        resultBanner.innerHTML = `✅ ¡Firebase conectado en tiempo real al proyecto <strong>${state.appId}</strong>!`;
                     }
 
                     const catalogCol = collection(db, 'artifacts', state.appId, 'public', 'data', 'catalogo');
                     const ordersCol = collection(db, 'artifacts', state.appId, 'public', 'data', 'pedidos');
                     const settingsCol = collection(db, 'artifacts', state.appId, 'public', 'data', 'configuracion');
 
-                    onSnapshot(catalogCol, (snapshot) => {
+                    unsubCatalog = onSnapshot(catalogCol, (snapshot) => {
                         if (snapshot.empty) {
                             if (!state.isSystemResetEmpty && !state.settings.isSystemResetEmpty) {
                                 INITIAL_CATALOG.forEach(item => fbSaveCatalogItem(item).catch(() => {}));
@@ -7712,7 +8132,7 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
                         }
                     }, (err) => console.warn("Error leyendo catálogo:", err));
 
-                    onSnapshot(ordersCol, (snapshot) => {
+                    unsubOrders = onSnapshot(ordersCol, (snapshot) => {
                         if (snapshot.empty) {
                             if (!state.isSystemResetEmpty && !state.settings.isSystemResetEmpty) {
                                 INITIAL_ORDERS.forEach(ord => fbSaveOrder(ord).catch(() => {}));
@@ -7732,7 +8152,7 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
                         }
                     }, (err) => console.warn("Error leyendo pedidos:", err));
 
-                    onSnapshot(settingsCol, (snapshot) => {
+                    unsubSettings = onSnapshot(settingsCol, (snapshot) => {
                         snapshot.forEach(d => {
                             if (d.id === 'main') {
                                 state.settings = { ...state.settings, ...d.data() };
@@ -7750,8 +8170,20 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
                     if (user) activateListeners(user);
                 });
                 activateListeners(auth.currentUser);
+                return true;
             } catch (err) {
+                state.isCloudConnected = false;
+                if (badge) {
+                    badge.className = 'inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40';
+                    badge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span> Modo Local (Verificar Firebase)';
+                }
+                if (adminStatus) {
+                    adminStatus.className = 'px-2.5 py-1 rounded-full text-[10px] font-black bg-rose-600 text-white';
+                    adminStatus.textContent = '⚠️ Desconectado (Revisa llaves/reglas)';
+                }
                 console.warn("Operando con memoria local de respaldo:", err);
+                if (forceVerify) throw err;
+                return false;
             }
         }
 
@@ -7760,4 +8192,3 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
     </script>
 </body>
 </html>
-```
