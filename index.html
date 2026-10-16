@@ -120,18 +120,6 @@ export default function App() {
   const [isDrawing, setIsDrawing] = useState(false);
   
   const [isPrinting, setIsPrinting] = useState(false);
-  const [isOnline, setIsOnline] = useState(navigator.onLine);
-
-  useEffect(() => {
-    const handleOnline = () => setIsOnline(true);
-    const handleOffline = () => setIsOnline(false);
-    window.addEventListener('online', handleOnline);
-    window.addEventListener('offline', handleOffline);
-    return () => {
-      window.removeEventListener('online', handleOnline);
-      window.removeEventListener('offline', handleOffline);
-    };
-  }, []);
 
   // Modales
   const [casualClientName, setCasualClientName] = useState('');
@@ -891,14 +879,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <div>
             <h1 className="font-bold text-amber-500 text-lg hidden sm:block">{settings.companyName}</h1>
-            <p className="text-xs text-amber-200/70 font-medium flex items-center gap-2">
-              Operador: {activeOperator.name} | Unidad: {activeOperator.assignedUnit}
-              {isOnline ? (
-                <span className="bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full text-[10px] font-bold border border-emerald-500/20 flex items-center gap-1"><Wifi className="w-3 h-3"/> Online</span>
-              ) : (
-                <span className="bg-rose-500/10 text-rose-400 px-2 py-0.5 rounded-full text-[10px] font-bold border border-rose-500/20 flex items-center gap-1"><WifiOff className="w-3 h-3"/> Offline</span>
-              )}
-            </p>
+            <p className="text-xs text-amber-200/70 font-medium">Operador: {activeOperator.name} | Unidad: {activeOperator.assignedUnit}</p>
           </div>
           <div className="flex gap-2">
             <div className="px-3 py-2 rounded-xl text-sm font-bold flex items-center gap-2 bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">
@@ -942,53 +923,7 @@ export default function App() {
                 </div>
              </div>
 
-             {/* Gráficas 100% Seguras en HTML Puro */}
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-lg">
-                   <h3 className="text-sm font-bold text-slate-300 mb-4 flex items-center gap-2"><Activity className="w-4 h-4 text-emerald-400"/> Cervezas Más Vendidas</h3>
-                   <div className="space-y-4">
-                      {products.filter(p => p.id !== 'p-empties').slice(0, 4).map(p => {
-                         const qtySold = invoices.reduce((acc, inv) => acc + (inv.items?.find(i => i.productId === p.id)?.qty || 0), 0);
-                         const maxSold = Math.max(10, qtySold * 1.5); 
-                         const pct = Math.min(100, (qtySold / maxSold) * 100);
-                         return (
-                            <div key={`chart_${p.id}`}>
-                               <div className="flex justify-between text-xs mb-1">
-                                  <span className="text-slate-400 font-medium line-clamp-1 w-48">{p.name}</span>
-                                  <span className="text-emerald-400 font-bold">{qtySold} cjs</span>
-                               </div>
-                               <div className="w-full bg-slate-950 rounded-full h-2.5 border border-slate-800">
-                                  <div className="bg-gradient-to-r from-emerald-600 to-emerald-400 h-2.5 rounded-full" style={{ width: `${pct}%` }}></div>
-                               </div>
-                            </div>
-                         )
-                      })}
-                   </div>
-                </div>
-
-                <div className="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-lg">
-                   <h3 className="text-sm font-bold text-slate-300 mb-4 flex items-center gap-2"><Truck className="w-4 h-4 text-sky-400"/> Ingresos por Unidad</h3>
-                   <div className="space-y-5 mt-4">
-                      {['CAJA-LOCAL-01', 'CAMION-01'].map(unit => {
-                         const totalUnit = invoices.filter(i => i.unitCode === unit && i.status === 'emitida').reduce((acc, i) => acc + i.total, 0);
-                         const maxRevenue = 2000; // Meta base para llenar la barra
-                         const pct = Math.min(100, (totalUnit / maxRevenue) * 100);
-                         return (
-                            <div key={`rev_${unit}`}>
-                               <div className="flex justify-between text-xs mb-1">
-                                  <span className="text-slate-400 font-bold">{unit}</span>
-                                  <span className="text-sky-400 font-extrabold">${totalUnit.toFixed(2)}</span>
-                               </div>
-                               <div className="w-full bg-slate-950 rounded-full h-3 border border-slate-800">
-                                  <div className="bg-gradient-to-r from-sky-600 to-sky-400 h-3 rounded-full" style={{ width: `${pct}%` }}></div>
-                               </div>
-                            </div>
-                         )
-                      })}
-                   </div>
-                </div>
-             </div>
-
+             {}
              <div className="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-lg">
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2"><Truck className="w-5 h-5 text-amber-400"/> Logística y Proveedores</h3>
                 <p className="text-sm text-slate-400 mb-4">Descarga el inventario de envases vacíos devolviéndolos a la cervecería o compañía distribuidora.</p>
