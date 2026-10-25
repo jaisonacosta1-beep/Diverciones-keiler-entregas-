@@ -5470,6 +5470,10 @@ ${itemsSummary}
                 s.fbApiKey = fbKey;
                 s.fbProjectId = fbProj;
                 s.fbAppId = fbApp;
+                
+                if (fbAppInstance && fbAppInstance.options.projectId !== fbProj) {
+                    fbAppInstance = null; // Forzar reinicio si cambió el proyecto
+                }
                 initFirebaseSync();
             }
 
@@ -8929,6 +8933,10 @@ Queremos regalarte un *Cupón VIP del ${couponPct}% de Descuento* con el código
                     return false;
                 }
 
+                if (fbAppInstance && fbAppInstance.options.projectId !== firebaseConfig.projectId) {
+                    fbAppInstance = null; // Forzar reinicio de Firebase si cambió la configuración
+                }
+
                 if (!fbAppInstance) {
                     const appName = `fc-${firebaseConfig.projectId || 'default'}-${Date.now()}`;
                     fbAppInstance = initializeApp(firebaseConfig, appName);
@@ -8944,24 +8952,29 @@ Queremos regalarte un *Cupón VIP del ${couponPct}% de Descuento* con el código
                 state.appId = (isSystemFb && typeof __app_id !== 'undefined') ? __app_id : (firebaseConfig.projectId || 'diverciones-keiler');
 
                 fbSaveOrder = async (orderObj) => {
+                    if (!auth.currentUser) return;
                     const serialized = { ...orderObj, itemsJson: JSON.stringify(orderObj.items) };
                     delete serialized.items;
                     await setDoc(doc(db, 'artifacts', state.appId, 'public', 'data', 'pedidos', orderObj.id), serialized);
                 };
 
                 fbDeleteOrder = async (id) => {
+                    if (!auth.currentUser) return;
                     await deleteDoc(doc(db, 'artifacts', state.appId, 'public', 'data', 'pedidos', id));
                 };
 
                 fbSaveCatalogItem = async (itemObj) => {
+                    if (!auth.currentUser) return;
                     await setDoc(doc(db, 'artifacts', state.appId, 'public', 'data', 'catalogo', itemObj.id), itemObj);
                 };
 
                 fbDeleteCatalogItem = async (id) => {
+                    if (!auth.currentUser) return;
                     await deleteDoc(doc(db, 'artifacts', state.appId, 'public', 'data', 'catalogo', id));
                 };
 
                 fbSaveSettings = async (settingsObj) => {
+                    if (!auth.currentUser) return;
                     await setDoc(doc(db, 'artifacts', state.appId, 'public', 'data', 'configuracion', 'main'), settingsObj);
                 };
 
@@ -8973,6 +8986,7 @@ Queremos regalarte un *Cupón VIP del ${couponPct}% de Descuento* con el código
                     }
                 } catch (authErr) {
                     console.warn("Error de Autenticación:", authErr);
+                    showToast('⚠️ Error: Debes habilitar "Autenticación Anónima" en tu Firebase Console', 'error');
                     throw new Error(`Auth Error: ${authErr.message}. Verifica que 'Autenticación Anónima' esté habilitada en tu Firebase Console > Authentication.`);
                 }
 
@@ -8982,6 +8996,7 @@ Queremos regalarte un *Cupón VIP del ${couponPct}% de Descuento* con el código
                     await getDocs(testCol);
                 } catch (fsErr) {
                     console.warn("Error de Firestore:", fsErr);
+                    showToast('⚠️ Error: Tus Reglas de Firestore deniegan los permisos de lectura/escritura', 'error');
                     throw new Error(`Firestore Error: ${fsErr.message}. Verifica las Reglas de Seguridad de tu base de datos en Firebase Console.`);
                 }
 
@@ -9021,7 +9036,10 @@ Queremos regalarte un *Cupón VIP del ${couponPct}% de Descuento* con el código
                             state.catalog = loaded;
                             renderAllViews();
                         }
-                    }, (err) => console.warn("Error leyendo catálogo:", err));
+                    }, (err) => {
+                        console.warn("Error leyendo catálogo:", err);
+                        showToast("⚠️ Error Firestore: Fallo al leer el catálogo. Revisa los permisos.", "error");
+                    });
 
                     unsubOrders = onSnapshot(ordersCol, (snapshot) => {
                         if (snapshot.empty) {
@@ -9041,7 +9059,10 @@ Queremos regalarte un *Cupón VIP del ${couponPct}% de Descuento* con el código
                             state.orders = loadedOrders;
                             renderAllViews();
                         }
-                    }, (err) => console.warn("Error leyendo pedidos:", err));
+                    }, (err) => {
+                        console.warn("Error leyendo pedidos:", err);
+                        showToast("⚠️ Error Firestore: Fallo al leer los pedidos. Revisa los permisos.", "error");
+                    });
 
                     unsubSettings = onSnapshot(settingsCol, (snapshot) => {
                         snapshot.forEach(d => {
@@ -9060,7 +9081,10 @@ Queremos regalarte un *Cupón VIP del ${couponPct}% de Descuento* con el código
                                 renderAllViews();
                             }
                         });
-                    }, (err) => console.warn("Error leyendo configuración:", err));
+                    }, (err) => {
+                        console.warn("Error leyendo configuración:", err);
+                        showToast("⚠️ Error Firestore: Fallo al leer configuraciones. Revisa los permisos.", "error");
+                    });
                 };
 
                 onAuthStateChanged(auth, (user) => {
