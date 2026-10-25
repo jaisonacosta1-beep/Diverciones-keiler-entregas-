@@ -81,7 +81,7 @@
                     <button type="button" onclick="window.app.openDirectWhatsApp()" class="hover:text-white transition flex items-center gap-1 font-bold text-emerald-400">
                         <i class="fa-brands fa-whatsapp text-xs"></i> <span class="hidden sm:inline">WhatsApp Directo</span>
                     </button>
-                    <button type="button" onclick="window.__directOpenAdminModal('admin')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-amber-300 border border-slate-700 transition flex items-center gap-1 font-bold" title="Acceso Admin">
+                    <button type="button" id="topClientAdminBtn" onclick="window.__directOpenAdminModal('admin')" class="hidden px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-amber-300 border border-slate-700 transition items-center gap-1 font-bold" title="Acceso Admin">
                         <i class="fa-solid fa-lock text-[9px] text-amber-400"></i> <span>Admin</span>
                     </button>
                 </div>
@@ -91,7 +91,7 @@
         <!-- Nivel 2: Marca + Botones de Acción (Ajustados para nunca desbordar) -->
         <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-2">
             <!-- Brand Identity -->
-            <div class="flex items-center gap-2.5 cursor-pointer min-w-0 group" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+            <div class="flex items-center gap-2.5 cursor-pointer min-w-0 group" onclick="window.app.handleSecretBrandTap()">
                 <div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-brand-600 via-brand-700 to-indigo-800 flex items-center justify-center text-white shadow-md shadow-brand-600/25 shrink-0">
                     <i class="fa-solid fa-tent text-base sm:text-lg"></i>
                     <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-[7px]">
@@ -193,6 +193,14 @@
 
             <!-- Right: Quick Actions -->
             <div class="flex items-center gap-2 shrink-0">
+                <button type="button" onclick="window.app.exportSeparateClientStoreHtml()" class="bg-indigo-600 hover:bg-indigo-500 text-white border border-indigo-400 px-2.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shadow-sm" title="Descargar archivo HTML exclusivo para clientes (Sin Panel Admin)">
+                    <i class="fa-solid fa-store"></i>
+                    <span class="hidden md:inline">Descargar Tienda Cliente</span>
+                </button>
+                <button type="button" onclick="window.app.copyAdminDirectLink()" class="bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 px-2.5 py-2 rounded-xl text-xs font-extrabold transition flex items-center gap-1.5 shadow-sm" title="Copiar tu Link Privado de Administrador">
+                    <i class="fa-solid fa-key"></i>
+                    <span class="hidden lg:inline">Link Admin</span>
+                </button>
                 <button type="button" onclick="window.app.openDriverDeliveriesView()" class="bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-400 px-2.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shadow-sm" title="Abrir Módulo de Entregas y Facturación en Calle">
                     <i class="fa-solid fa-truck-fast"></i>
                     <span class="hidden sm:inline">Modo Entregas</span>
@@ -2281,14 +2289,14 @@
         </div>
     </div>
 
-    <!-- Pie de Página Exclusivo de la Tienda Cliente (Con Botón Privado de Acceso Admin) -->
+    <!-- Pie de Página Exclusivo de la Tienda Cliente (Sin Botón de Admin para Clientes) -->
     <footer id="clientFooter" class="bg-slate-950 text-slate-400 border-t border-slate-800 mt-10 pb-24 sm:pb-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
             <div class="text-center sm:text-left">
                 <span class="font-black text-white">Fiesta<span class="text-brand-400">Control</span></span> • Alquiler de Mobiliario, Trampolines, Carpas y Sonido
                 <p class="text-[11px] text-slate-500 mt-0.5">Reservas 100% seguras vía WhatsApp</p>
             </div>
-            <div class="flex items-center gap-3">
+            <div id="footerAdminBtnWrap" class="hidden items-center gap-3">
                 <button type="button" onclick="window.__directOpenAdminModal('admin')" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-extrabold text-xs shadow-lg transition flex items-center gap-2">
                     <i class="fa-solid fa-lock text-amber-300"></i>
                     <span>Acceso Personal / Admin</span>
@@ -4034,6 +4042,7 @@ ${itemsSummary}
         // --- ADMIN TAB 1: RENDER ORDERS, STREET TRACKING & PARTIAL PAYMENTS ---
         function renderAdminOrders() {
             const container = document.getElementById('adminOrdersContainer');
+            if (!container) return;
             const dateFilter = document.getElementById('orderFilterDate')?.value || '';
 
             // Update Global KPIs & Top Street Banner
@@ -4068,11 +4077,11 @@ ${itemsSummary}
             const netProfit = totalCollected - totalExpenses;
 
             // Update KPI DOM
-            document.getElementById('kpiStreetItems').textContent = totalUnitsInStreet;
-            document.getElementById('kpiStreetOrdersCount').textContent = `En ${ordersWithItemsInStreet} punto(s) de entrega activos`;
-            document.getElementById('kpiPendingMoney').textContent = `$${totalPendingDebt.toFixed(2)}`;
-            document.getElementById('kpiCollectedMoney').textContent = `$${totalCollected.toFixed(2)}`;
-            document.getElementById('kpiTotalOrders').textContent = state.orders.length;
+            if (document.getElementById('kpiStreetItems')) document.getElementById('kpiStreetItems').textContent = totalUnitsInStreet;
+            if (document.getElementById('kpiStreetOrdersCount')) document.getElementById('kpiStreetOrdersCount').textContent = `En ${ordersWithItemsInStreet} punto(s) de entrega activos`;
+            if (document.getElementById('kpiPendingMoney')) document.getElementById('kpiPendingMoney').textContent = `$${totalPendingDebt.toFixed(2)}`;
+            if (document.getElementById('kpiCollectedMoney')) document.getElementById('kpiCollectedMoney').textContent = `$${totalCollected.toFixed(2)}`;
+            if (document.getElementById('kpiTotalOrders')) document.getElementById('kpiTotalOrders').textContent = state.orders.length;
             const netEl = document.getElementById('kpiNetProfitMoney');
             const expSubEl = document.getElementById('kpiExpensesSubtitle');
             const resSubEl = document.getElementById('kpiReservedOrdersSub');
@@ -4095,14 +4104,16 @@ ${itemsSummary}
             // Render Top Street Summary Pills
             const pillsBox = document.getElementById('streetSummaryPills');
             const streetEntries = Object.entries(streetByItemMap);
-            if (streetEntries.length === 0) {
-                pillsBox.innerHTML = `<span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold"><i class="fa-solid fa-check mr-1"></i> Todo el mobiliario está recogido en bodega</span>`;
-            } else {
-                pillsBox.innerHTML = streetEntries.map(([name, qty]) => `
-                    <span class="px-3 py-1 rounded-full bg-rose-600 text-white text-xs font-bold shadow-xs flex items-center gap-1.5">
-                        <i class="fa-solid fa-location-dot"></i> ${qty}x ${name} en la calle
-                    </span>
-                `).join('');
+            if (pillsBox) {
+                if (streetEntries.length === 0) {
+                    pillsBox.innerHTML = `<span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold"><i class="fa-solid fa-check mr-1"></i> Todo el mobiliario está recogido en bodega</span>`;
+                } else {
+                    pillsBox.innerHTML = streetEntries.map(([name, qty]) => `
+                        <span class="px-3 py-1 rounded-full bg-rose-600 text-white text-xs font-bold shadow-xs flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot"></i> ${qty}x ${name} en la calle
+                        </span>
+                    `).join('');
+                }
             }
 
             // Filter Orders for Display
@@ -6527,6 +6538,98 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
                 }
                 this.switchMainView('deliveries');
             },
+            handleSecretBrandTap() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                if (window.__CLIENT_ONLY_STORE_MODE === true) return;
+                state.secretBrandTapCount = (state.secretBrandTapCount || 0) + 1;
+                clearTimeout(state.secretBrandTapTimer);
+                state.secretBrandTapTimer = setTimeout(() => {
+                    state.secretBrandTapCount = 0;
+                }, 1800);
+                if (state.secretBrandTapCount >= 5) {
+                    state.secretBrandTapCount = 0;
+                    this.openAdminLoginModal('admin');
+                }
+            },
+            copyAdminDirectLink() {
+                const baseUrl = window.location.href.split('?')[0].split('#')[0];
+                const fullLink = `${baseUrl}?admin=1`;
+                const ta = document.createElement('textarea');
+                ta.value = fullLink;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                ta.remove();
+                showToast(`🔑 Link Privado de Admin copiado: ${fullLink}`, 'success');
+            },
+            exportSeparateClientStoreHtml() {
+                // Asegurar que todo el menú, catálogo, combos y calculadora del cliente estén renderizados antes de clonar
+                const prevMainView = state.mainView;
+                state.mainView = 'client';
+                state.selectedCategory = 'TODOS';
+                renderAllViews();
+                state.mainView = prevMainView;
+
+                // Genera una copia del HTML actual pero con el candado estricto __CLIENT_ONLY_STORE_MODE = true y sin vistas de Admin
+                const cloneDoc = document.documentElement.cloneNode(true);
+                cloneDoc.querySelector('#viewAdmin')?.remove();
+                cloneDoc.querySelector('#viewDeliveries')?.remove();
+                cloneDoc.querySelector('#adminHeader')?.remove();
+                cloneDoc.querySelector('#deliveriesHeader')?.remove();
+                cloneDoc.querySelector('#adminLoginModal')?.remove();
+                cloneDoc.querySelector('#topClientAdminBtn')?.remove();
+                cloneDoc.querySelector('#footerAdminBtnWrap')?.remove();
+
+                // Limpiar cualquier notificación (toast) de bienvenida al Admin que estuviera en pantalla al exportar
+                const clonedToastContainer = cloneDoc.querySelector('#toastContainer');
+                if (clonedToastContainer) {
+                    clonedToastContainer.innerHTML = '';
+                }
+
+                // Garantizar que la cabecera, el menú de categorías, el catálogo completo y el pie de página del cliente estén 100% visibles
+                cloneDoc.querySelector('#clientHeader')?.classList.remove('hidden');
+                cloneDoc.querySelector('#viewClient')?.classList.remove('hidden');
+                cloneDoc.querySelector('#clientFooter')?.classList.remove('hidden');
+                cloneDoc.querySelector('#quoteDrawerBackdrop')?.classList.add('hidden');
+                cloneDoc.querySelector('body')?.classList.remove('overflow-hidden');
+
+                // Limpiar contenedores de mapas Leaflet clonados para que se inicialicen frescos en el navegador del cliente
+                const clonedPickerMap = cloneDoc.querySelector('#clientPickerMap');
+                if (clonedPickerMap) {
+                    clonedPickerMap.innerHTML = '';
+                    clonedPickerMap.className = 'w-full h-44 rounded-xl border border-slate-300 shadow-inner';
+                    clonedPickerMap.removeAttribute('style');
+                }
+
+                const lockScript = document.createElement('script');
+                lockScript.textContent = `
+                    window.__CLIENT_ONLY_STORE_MODE = true;
+                    window.__directOpenAdminModal = function(){};
+                    window.addEventListener('DOMContentLoaded', function() {
+                        var tc = document.getElementById('toastContainer');
+                        if (tc) tc.innerHTML = '';
+                        document.getElementById('clientHeader')?.classList.remove('hidden');
+                        document.getElementById('viewClient')?.classList.remove('hidden');
+                        document.getElementById('clientFooter')?.classList.remove('hidden');
+                        if (window.app && typeof window.app.setCategoryFilter === 'function') {
+                            window.app.setCategoryFilter('TODOS');
+                        }
+                    });
+                `;
+                cloneDoc.querySelector('head')?.prepend(lockScript);
+
+                const finalHtml = '<!DOCTYPE html>\n' + cloneDoc.outerHTML;
+                const blob = new Blob([finalHtml], { type: 'text/html;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'tienda-clientes.html';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                URL.revokeObjectURL(url);
+                showToast('🏪 Archivo "tienda-clientes.html" descargado limpio y sin avisos de Admin', 'success');
+            },
             copyDeliveriesDirectLink() {
                 const baseUrl = window.location.href.split('?')[0].split('#')[0];
                 const fullLink = `${baseUrl}?entregas=1`;
@@ -6539,6 +6642,7 @@ ${ord.evidencePhotoUrl ? `\n📸 *Foto de entrega tomada y registrada en sistema
                 showToast(`🔗 Link de Entregas copiado: ${fullLink}`, 'success');
             },
             openAdminLoginModal(targetView) {
+                if (window.__CLIENT_ONLY_STORE_MODE === true) return;
                 if (targetView) state.pendingTargetView = targetView;
                 if (state.isAdminAuthenticated) {
                     this.switchMainView(state.pendingTargetView || 'admin');
